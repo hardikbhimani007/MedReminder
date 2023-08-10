@@ -73,6 +73,7 @@ class TakeMedicineVC: UIViewController {
     
     @objc func tappedEditBtn() {
         print("Working on r_dev branch.")
+        print("Conflicting from master branch.")
         let update = realm.objects(MedicineDetalis.self)[data.index ?? 0]
         try! realm.write({
             
