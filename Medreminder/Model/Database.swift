@@ -46,5 +46,3 @@ struct GetData: Codable {
     
     init() {}
 }
-
-

@@ -72,16 +72,12 @@ class TakeMedicineVC: UIViewController {
     }
     
     @objc func tappedEditBtn() {
-        print("Working on r_dev branch.")
-        print("Working on conflict practices.")
-        let update = realm.objects(MedicineDetalis.self)[data.index ?? 0]
-        try! realm.write({
-            
-        })
-//        try! realm.write({
-//            let storyBoard = UIStoryboard(name: "AddMedication", bundle: nil).instantiateViewController(withIdentifier: "AddMedicationVC") as! AddMedicationVC
-//            self.navigationController?.pushViewController(storyBoard, animated: true)
-//        })
+        let storyBoard = UIStoryboard(name: "AddMedication", bundle: nil).instantiateViewController(withIdentifier: "AddMedicationVC") as! AddMedicationVC
+        if let vc = UIStoryboard(name: "MedicinePurpose", bundle: nil).instantiateViewController(withIdentifier: "SetTimerVC") as? SetTimerVC {
+//            vc.isEditTimer = true
+            vc.shouldShowUpdateButton = true
+        }
+        self.navigationController?.pushViewController(storyBoard, animated: true)
     }
     
     @objc func tappedTakeBtn() {
@@ -98,4 +94,3 @@ class TakeMedicineVC: UIViewController {
         APP_DELEGATE.window?.rootViewController = APP_DELEGATE.appNavigation
     }
 }
-
