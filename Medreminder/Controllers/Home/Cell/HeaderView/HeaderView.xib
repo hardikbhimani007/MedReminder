@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="HeaderView" id="iN0-l3-epB" customClass="HeaderView" customModule="Medreminder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TNj-EH-iMd">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good Morning" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6DK-0d-OIA">
+                            <rect key="frame" x="30" y="18" width="372" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gracy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26V-Uo-gbv">
+                            <rect key="frame" x="30" y="50" width="339" height="36"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDj-of-w5s">
+                            <rect key="frame" x="379" y="40" width="45" height="74"/>
+                            <color key="backgroundColor" red="0.14117647058823529" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="45" id="Zbz-6c-Lmp"/>
+                                <constraint firstAttribute="height" constant="74" id="n6G-zz-20d"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal">
+                                <string key="title">J
+O
+H
+N</string>
+                                <color key="titleColor" red="0.047058823529411764" green="0.074509803921568626" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <buttonConfiguration key="configuration" style="plain">
+                                <string key="title">J
+O
+H
+N</string>
+                                <color key="baseForegroundColor" red="0.047058823529411764" green="0.074509803921568626" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                            </buttonConfiguration>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.047058823530000002" green="0.074509803920000006" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="bDj-of-w5s" secondAttribute="trailing" constant="-10" id="80j-Kv-YaK"/>
+                        <constraint firstAttribute="height" constant="116" id="BvV-XJ-XhC"/>
+                        <constraint firstItem="bDj-of-w5s" firstAttribute="top" secondItem="TNj-EH-iMd" secondAttribute="top" constant="40" id="Bxx-g5-ly5"/>
+                        <constraint firstItem="6DK-0d-OIA" firstAttribute="top" secondItem="TNj-EH-iMd" secondAttribute="top" constant="18" id="DIG-No-EhG"/>
+                        <constraint firstItem="26V-Uo-gbv" firstAttribute="leading" secondItem="TNj-EH-iMd" secondAttribute="leading" constant="30" id="OEW-Cb-Ad7"/>
+                        <constraint firstItem="26V-Uo-gbv" firstAttribute="top" secondItem="6DK-0d-OIA" secondAttribute="bottom" constant="8" id="Zf2-cl-8Dv"/>
+                        <constraint firstItem="6DK-0d-OIA" firstAttribute="leading" secondItem="TNj-EH-iMd" secondAttribute="leading" constant="30" id="c6e-Fl-t2v"/>
+                        <constraint firstItem="bDj-of-w5s" firstAttribute="leading" secondItem="26V-Uo-gbv" secondAttribute="trailing" constant="10" id="dDc-l3-ITb"/>
+                        <constraint firstAttribute="trailing" secondItem="6DK-0d-OIA" secondAttribute="trailing" constant="12" id="q1Y-HL-mMc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TNj-EH-iMd" secondAttribute="trailing" id="3I3-Rl-Ihb"/>
+                <constraint firstItem="TNj-EH-iMd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ODg-Ee-rFf"/>
+                <constraint firstItem="TNj-EH-iMd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jhD-g7-YVP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="goodMoringLbl" destination="6DK-0d-OIA" id="JaD-aG-XNf"/>
+                <outlet property="headerView" destination="TNj-EH-iMd" id="A41-9R-cdo"/>
+                <outlet property="userBtn" destination="bDj-of-w5s" id="7gl-e0-fDd"/>
+                <outlet property="userNameLbl" destination="26V-Uo-gbv" id="fyE-hw-UEL"/>
+            </connections>
+            <point key="canvasLocation" x="131.8840579710145" y="-148.66071428571428"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

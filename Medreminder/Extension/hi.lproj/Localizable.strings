@@ -1,0 +1,105 @@
+/* 
+  Localizable.strings
+  Medreminder
+
+  Created by MacOS on 08/08/2023.
+  
+*/
+
+"BOOK APPOINTMENT" = "अपॉइंटमेंट बुक करें";
+"Good Morning" = "सुप्रभात";
+"Good Afternoon" = "सुप्रदिन";
+"Good Evening" = "शुभ संध्या";
+"Good Night" = "शुभ रात्रि";
+"Add medication" = "दवा जोड़ें";
+"Add Dose" = "डोज़ जोड़ें";
+"Add Notes" = "नोट्स जोड़ें";
+"Set Name" = "नाम निर्धारित करें";
+"Enter your name" = "अपना नाम दर्ज करें";
+"Ok" = "ठीक है";
+
+"What medicine do you want to add?" = "आप कौनसी दवा जोड़ना चाहेंगे?";
+"Type of choose your med from the list" = "सूची से अपनी दवा का प्रकार चुनें";
+"Next" = "आगामी";
+
+"What kind of medicine is it?" = "यह किस प्रकार की दवा है?";
+"Pill" = "गोली";
+"Solution" = "समाधान";
+"Injection" = "इंजेक्शन";
+"Powder" = "पाउडर";
+"Drops" = "बूंदें";
+"Inhaler" = "इन्हेलर";
+"Other" = "अन्य";
+
+"What strength is the medicine?" = "दवा की कितनी ताक़त है?";
+"Type" = "प्रकार";
+"g" = "ग्राम";
+"IU" = "आईयू";
+"mcg" = "माइक्रोग्राम";
+"mEq" = "मिलीक्वाइवलेंट";
+"mg" = "मिलीग्राम";
+
+"What is the purpose for taking this medication?" = "इस दवा को लेने का उद्देश्य क्या है?";
+"Type and choose the reason from the list" = "सूची से कारण का प्रकार करें और चुनें";
+
+"How often do you take this medicine?" = "आप इस दवा को कितनी बार लेते हैं?";
+"Daliy" = "रोज़ाना";
+"Once a week" = "हफ्ते में एक बार";
+"2 days a week" = "हफ्ते में 2 दिन";
+"3 days a week" = "हफ्ते में 3 दिन";
+"4 days a week" = "हफ्ते में 4 दिन";
+"5 days a week" = "हफ्ते में 5 दिन";
+"6 days a week" = "हफ्ते में 6 दिन";
+"Once a month" = "महीने में एक बार";
+"Alternate days" = "आवर्ती दिन";
+
+"Choose the days you need to take the med" = "वे दिन चुनें जिन्हें आपको दवा लेनी है";
+"Sunday" = "रविवार";
+"Monday" = "सोमवार";
+"Tuesday" = "मंगलवार";
+"Wednesday" = "बुधवार";
+"Thursday" = "गुरुवार";
+"Friday" = "शुक्रवार";
+"Saturday" = "शनिवार";
+
+"At what time do you need your first dose?" = "आपको पहली खुराक किस समय चाहिए?";
+"Morning" = "सुबह";
+"Before Food" = "खाना खाने से पहले";
+"Afternoon" = "दोपहर";
+"After Food" = "खाना खाने के बाद";
+"Evening" = "शाम";
+"Anytime" = "किसी भी समय";
+"Night" = "रात";
+
+"Set Time" = "समय निर्धारित करें";
+"Hours" = "घंटे";
+"Minutes" = "मिनट";
+"Seconds" = "सेकंड";
+"Done" = "किया";
+
+"AUDIO" = "ऑडियो";
+"OFF" = "बंद";
+"ON" = "चालू";
+"CHANGE" = "बदलें";
+"Select languge" = "भाषा चुनें";
+"English" = "अंग्रेज़ी";
+"Hindi" = "हिन्दी";
+"Cancel" = "रद्द करें";
+
+"Profile" = "प्रोफ़ाइल";
+"Measurements" = "माप";
+"Notes" = "नोट्स";
+"Appointments" = "अपॉइंटमेंट्स";
+"Doctors" = "डॉक्टर्स";
+"Refills" = "रिफ़िल्स";
+"Track Health" = "स्वास्थ्य को ट्रैक करें";
+"Medicine information" = "दवा की जानकारी";
+"Change language" = "भाषा बदलें";
+"Theme" = "थीम";
+"Share your progress" = "अपनी प्रगति साझा करें";
+"Invite friends and family" = "दोस्तों और परिवार को आमंत्रित करें";
+"Enter Invitation code" = "आमंत्रण कोड दर्ज करें";
+"Customer service" = "ग्राहक सेवा";
+"Help and support" = "मदद और सहायता";
+
+"How to add new medicine?" = "नई दवा कैसे जोड़ें?";

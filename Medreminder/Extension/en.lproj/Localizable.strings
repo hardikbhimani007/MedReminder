@@ -1,0 +1,105 @@
+/* 
+  Localizable.strings
+  Medreminder
+
+  Created by MacOS on 08/08/2023.
+  
+*/
+
+"BOOK APPOINTMENT" = "BOOK APPOINTMENT";
+"Good Morning" = "Good Morning";
+"Good Afternoon" = "Good Afternoon";
+"Good Evening" = "Good Evening";
+"Good Night" = "Good Night";
+"Add medication" = "Add medication";
+"Add Dose" = "Add Dose";
+"Add Notes" = "Add Notes";
+"Set Name" = "Set Name";
+"Enter your name" = "Enter your name";
+"Ok" = "Ok";
+
+"What medicine do you want to add?" = "What medicine do you want to add?";
+"Type of choose your med from the list" = "Type of choose your med from the list";
+"Next" = "Next";
+
+"What kind of medicine is it?" = "What kind of medicine is it?";
+"Pill" = "Pill";
+"Solution" = "Solution";
+"Injection" = "Injection";
+"Powder" = "Powder";
+"Drops" = "Drops";
+"Inhaler" = "Inhaler";
+"Other" = "Other";
+
+"What strength is the medicine?" = "What strength is the medicine?";
+"Type" = "Type";
+"g" = "g";
+"IU" = "IU";
+"mcg" = "mcg";
+"mEq" = "mEq";
+"mg" = "mg";
+
+"What is the purpose for taking this medication?" = "What is the purpose for taking this medication?";
+"Type and choose the reason from the list" = "Type and choose the reason from the list";
+
+"How often do you take this medicine?" =  "How often do you take this medicine?";
+"Daliy" = "Daliy";
+"Once a week" = "Once a week";
+"2 days a week" = "2 days a week";
+"3 days a week" = "3 days a week";
+"4 days a week" = "4 days a week";
+"5 days a week" = "5 days a week";
+"6 days a week" = "6 days a week";
+"Once a month" = "Once a month";
+"Alternate days" = "Alternate days";
+
+"Choose the days you need to take the med" = "Choose the days you need to take the med";
+"Sunday" = "Sunday";
+"Monday" = "Monday";
+"Tuesday" = "Tuesday";
+"Wednesday" = "Wednesday";
+"Thursday" = "Thursday";
+"Friday" = "Friday";
+"Saturday" = "Saturday";
+
+"At what time do you need your first dose?" = "At what time do you need your first dose?";
+"Morning" = "Morning";
+"Before Food" = "Before Food";
+"Afternoon" = "Afternoon";
+"After Food" = "After Food";
+"Evening" = "Evening";
+"Anytime" = "Anytime";
+"Night" = "Night";
+
+"Set Time" = "Set Time";
+"Hours" = "Hours";
+"Minutes" = "Minutes";
+"Seconds" = "Seconds";
+"Done" = "Done";
+
+"AUDIO" = "AUDIO";
+"OFF" = "OFF";
+"ON" = "ON";
+"CHANGE" = "CHANGE";
+"Select languge" = "Select languge";
+"English" = "English";
+"Hindi" = "Hindi";
+"Cancel" = "Cancel";
+
+"Profile" = "Profile";
+"Measurements" = "Measurements";
+"Notes" = "Notes";
+"Appointments" = "Appointments";
+"Doctors" = "Doctors";
+"Refills" = "Refills";
+"Track Health" = "Track Health";
+"Medicine information" = "Medicine information";
+"Change language" = "Change language";
+"Theme" = "Theme";
+"Share your progress" = "Share your progress";
+"Invite friends and family" = "Invite friends and family";
+"Enter Invaitation code" = "Enter Invaitation code";
+"Customer service" = "Customer service";
+"Help and support" = "Help and support";
+
+"How to add new medicine?" = "How to add new medicine?";
