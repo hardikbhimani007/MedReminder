@@ -74,7 +74,7 @@ class TakeMedicineVC: UIViewController {
     @objc func tappedEditBtn() {
         let storyBoard = UIStoryboard(name: "AddMedication", bundle: nil).instantiateViewController(withIdentifier: "AddMedicationVC") as! AddMedicationVC
         if let vc = UIStoryboard(name: "MedicinePurpose", bundle: nil).instantiateViewController(withIdentifier: "SetTimerVC") as? SetTimerVC {
-//            vc.isEditTimer = true
+            vc.isEditTimer = true
             vc.shouldShowUpdateButton = true
         }
         self.navigationController?.pushViewController(storyBoard, animated: true)
