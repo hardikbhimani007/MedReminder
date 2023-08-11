@@ -83,8 +83,6 @@ class SetTimerVC: UIViewController {
         dateComponet.second = second
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponet, repeats: false)
         let request =   UNNotificationRequest(identifier: notificationIdentifier, content: content, trigger: trigger)
-        
-        
         center.add(request) { (error) in
             if error != nil {
                 print("Error = \(error?.localizedDescription ?? "error local notification")")
