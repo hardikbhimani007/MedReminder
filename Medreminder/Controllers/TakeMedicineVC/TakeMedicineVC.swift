@@ -21,8 +21,11 @@ class TakeMedicineVC: UIViewController {
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var DeleteBtn: UIButton!
     //MARK: - Properties
+    var index: Int?
+    var isUpdate: Bool?
     let realm = try! Realm()
     let homeVC = HomeVC()
+    let objMed: MedDetalis? = nil
     var data: GetData = GetData()
     var medName = ""
     var medType = ""
@@ -40,7 +43,6 @@ class TakeMedicineVC: UIViewController {
         editBtn.layer.cornerRadius = 29
         setUpNotificationData()
         cancelBtn.addTarget(self, action: #selector(tappedCancelBtn), for: .touchUpInside)
-        takeBtn.addTarget(self, action: #selector(tappedTakeBtn), for: .touchUpInside)
         editBtn.addTarget(self, action: #selector(tappedEditBtn), for: .touchUpInside)
     }
     
@@ -56,7 +58,7 @@ class TakeMedicineVC: UIViewController {
     }
 
     func deleteDataFromDataBase() {
-        let deleteData = realm.objects(MedicineDetalis.self)[data.index ?? 0]
+        let deleteData = realm.objects(MedicineDetalis.self)[index ?? 0]
         try! realm.write({
             realm.delete(deleteData)
         })
@@ -73,18 +75,26 @@ class TakeMedicineVC: UIViewController {
     
     @objc func tappedEditBtn() {
         let storyBoard = UIStoryboard(name: "AddMedication", bundle: nil).instantiateViewController(withIdentifier: "AddMedicationVC") as! AddMedicationVC
-        if let vc = UIStoryboard(name: "MedicinePurpose", bundle: nil).instantiateViewController(withIdentifier: "SetTimerVC") as? SetTimerVC {
-            vc.isEditTimer = true
-            vc.shouldShowUpdateButton = true
-        }
+        storyBoard.isUpdate = true
+        storyBoard.index = index
         self.navigationController?.pushViewController(storyBoard, animated: true)
     }
     
     @objc func tappedTakeBtn() {
-      
+      deleteDataFromDataBase()
     }
     
     @IBAction func tappedDeleteBtn(_ sender: UIButton) {
+        deleteDataFromDataBase()
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
+        APP_DELEGATE.appNavigation = UINavigationController(rootViewController: nextViewController) // set RootViewController
+        APP_DELEGATE.appNavigation?.isNavigationBarHidden = false
+        APP_DELEGATE.window?.makeKeyAndVisible()
+        APP_DELEGATE.window?.rootViewController = APP_DELEGATE.appNavigation
+    }
+    
+    @IBAction func tappedTakeBtn(_ sender: UIButton) {
         deleteDataFromDataBase()
         let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC

@@ -89,7 +89,7 @@ class FirstDoseVC: UIViewController {
         do {
             if let data = UserDefaults.standard.data(forKey: "ObjMedicine") {
                 var objMed = try JSONDecoder().decode(MedDetalis.self, from: data)
-                objMed = MedDetalis(medName: objMed.medName, medType: objMed.medType, firstDose: selectedIndexType, hr: 0, min: 0, sec: 0)
+                objMed = MedDetalis(medName: objMed.medName, medType: objMed.medType, firstDose: selectedIndexType, hr: 0, min: 0, sec: 0, isEdit: objMed.isEdit, index: objMed.index)
                 print(">>>>>>>>",objMed)
                 vc.objMedicine = objMed
                 vc.medicinePurpose = detalis
@@ -97,6 +97,7 @@ class FirstDoseVC: UIViewController {
         } catch let error {
             print("Error decoding: \(error)")
         }
+        vc.shouldShowUpdateButton = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

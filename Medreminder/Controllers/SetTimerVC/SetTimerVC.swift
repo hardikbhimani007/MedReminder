@@ -23,7 +23,6 @@ class SetTimerVC: UIViewController {
     @IBOutlet weak var secLbl: UILabel!
     @IBOutlet weak var updateBtn: UIButton!
     //MARK: - Properties
-//    var isEditTimer = false
     var shouldShowUpdateButton = false
     let realm = try! Realm()
     let data = GetData()
@@ -45,13 +44,6 @@ class SetTimerVC: UIViewController {
         volumeBtn.addTarget(self, action: #selector(tappedVolumeBtn), for: .touchUpInside)
         documentBtn.addTarget(self, action: #selector(tappedDocumnetBtn), for: .touchUpInside)
         updateBtn.addTarget(self, action: #selector(tappedUpdateBtn), for: .touchUpInside)
-        if shouldShowUpdateButton {
-            nextBtn.isHidden = true
-            updateBtn.isHidden = false
-        } else {
-            nextBtn.isHidden = false
-            updateBtn.isHidden = true
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,24 +54,12 @@ class SetTimerVC: UIViewController {
         setTimeLbl.text = "\(localized(key: "Set Time"))"
         let tittle = NSMutableAttributedString(string: "\(localized(key: "Done"))", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .semibold)])
         nextBtn.setAttributedTitle(tittle, for: .normal)
+        setButtons()
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-    }
-    
     //MARK: - Functions
-   @objc func tappedUpdateBtn() {
-        try! realm.write({
-            let update = realm.objects(MedicineDetalis.self)[data.index ?? 0]
-            update.medicineName = objMedicine?.medName
-            update.medicineType = objMedicine?.medType
-            update.firstDose = objMedicine?.firstDose
-            update.hr = hour
-            update.min = minute
-            update.sec = second
-        })
-       self.navigationController?.popToRootViewController(animated: true)
+    func setButtons() {
+        nextBtn.isHidden = objMedicine?.isEdit ?? true
+        updateBtn.isHidden = !(objMedicine?.isEdit ?? false)
     }
     
     func setLocalNotification() {
@@ -168,6 +148,19 @@ class SetTimerVC: UIViewController {
         navigationController?.view.layer.add(transition, forKey: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc func tappedUpdateBtn() {
+         try! realm.write({
+             let update = realm.objects(MedicineDetalis.self)[objMedicine?.index ?? 0]
+             update.medicineName = objMedicine?.medName
+             update.medicineType = objMedicine?.medType
+             update.firstDose = objMedicine?.firstDose
+             update.hr = hour
+             update.min = minute
+             update.sec = second
+         })
+        self.navigationController?.popToRootViewController(animated: true)
+     }
 }
 //MARK: - UIPickerViewDelegate & UIPickerViewDataSource
 extension SetTimerVC: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -248,4 +241,3 @@ extension SetTimerVC: UIPickerViewDelegate, UIPickerViewDataSource {
         return label
     }
 }
-

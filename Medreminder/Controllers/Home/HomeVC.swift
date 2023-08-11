@@ -74,11 +74,11 @@ class HomeVC: UIViewController {
         getDataFromDataBase()
         let tittle = NSMutableAttributedString(string: "\(localized(key: "BOOK APPOINTMENT"))", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 7.2, weight: .bold)])
         bookAppointmentBtn.setAttributedTitle(tittle, for: .normal)
-        tableViewMedicine.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        tableViewMedicine.reloadData()
         setAlertHaslunchedBefore()
     }
     
@@ -221,6 +221,8 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         vc.hr = detalis.hr ?? 0
         vc.min = detalis.min ?? 0
         vc.sec = detalis.sec ?? 0
+        vc.isUpdate = true
+        vc.index = indexPath.row
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -259,10 +261,10 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 //MARK: - FSCalendarDelegate & FSCalendarDataSource
 extension HomeVC: FSCalendarDelegate, FSCalendarDataSource {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        calenderView.isHidden = true
-        self.tabBarController?.selectedIndex = 2
+        calendar.setCurrentPage(date, animated: true)
+        calendar.select(date)
     }
-    
+     
     func minimumDate(for calendar: FSCalendar) -> Date {
         return Date()
     }

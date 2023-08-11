@@ -25,6 +25,8 @@ class AddMedicationVC: UIViewController {
     var medArray = [MedicineName]()
     var filterMed = [MedicineName]()
     var filtered = false
+    var isUpdate = false
+    var index: Int?
     var objMedDetails: MedDetalis?
     
     override func viewDidLoad() {
@@ -96,7 +98,7 @@ class AddMedicationVC: UIViewController {
     @objc func tappedNextBtn() {
         let storyBoard = UIStoryboard(name: "AddMedication", bundle: Bundle.main)
         let vc = storyBoard.instantiateViewController(withIdentifier: "MedicineTypeVC") as! MedicineTypeVC
-        objMedDetails = MedDetalis(medName: txtFieldMedicineName.text ?? "", medType: "", firstDose: "", hr: 0, min: 0, sec: 0)
+        objMedDetails = MedDetalis(medName: txtFieldMedicineName.text ?? "", medType: "", firstDose: "", hr: 0, min: 0, sec: 0, isEdit: isUpdate, index: index)
         let detalis = Medicine(medicineName: txtFieldMedicineName.text!)
         vc.medicine = detalis
         vc.objMedicine = objMedDetails

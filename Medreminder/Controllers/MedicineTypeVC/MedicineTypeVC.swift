@@ -68,7 +68,7 @@ class MedicineTypeVC: UIViewController {
     @objc func tappedNextBtn() {
         let storyBoard = UIStoryboard(name: "AddMedication", bundle: Bundle.main)
         let vc = storyBoard.instantiateViewController(withIdentifier: "MedicineStrengthVC") as! MedicineStrengthVC
-        objMedicine = MedDetalis(medName: objMedicine?.medName ?? "", medType: selectedIndexType, firstDose: "", hr: 0, min: 0, sec: 0)
+        objMedicine = MedDetalis(medName: objMedicine?.medName ?? "", medType: selectedIndexType, firstDose: "", hr: 0, min: 0, sec: 0, isEdit: objMedicine?.isEdit ?? false, index: objMedicine?.index ?? 0)
         let detalis = Medicine(medicineName: medicineNameLbl.text!)
         vc.medicine = detalis
         do {
