@@ -152,6 +152,7 @@ class HomeVC: UIViewController {
     }
     
     private func setUp() {
+        datePickerView.layer.cornerRadius = 4
         bookAppointmentBtn.layer.cornerRadius = 10
         datePickerView.delegate = self
         datePickerView.dataSource = self

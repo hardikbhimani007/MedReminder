@@ -25,7 +25,6 @@ class SetTimerVC: UIViewController {
     //MARK: - Properties
     var shouldShowUpdateButton = false
     let realm = try! Realm()
-    let data = GetData()
     var medicinePurpose = Medicine()
     var objMedicine: MedDetalis?
     var formatter = ""

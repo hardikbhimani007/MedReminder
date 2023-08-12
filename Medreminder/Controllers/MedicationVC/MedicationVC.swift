@@ -75,6 +75,7 @@ class MedicationVC: UIViewController {
     }
     //MARK: - Functions
     func setUp() {
+        fsDateView.layer.cornerRadius = 4
         bookAppointmetBtn.layer.cornerRadius = 10
         fsDateView.delegate = self
         fsDateView.dataSource = self

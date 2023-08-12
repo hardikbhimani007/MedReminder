@@ -42,21 +42,3 @@ struct MedDetalis: Codable {
     
     init() {}
 }
-
-// MARK: - Get data from Realm
-struct GetData: Codable {
-    var medName: String?
-    var medType: String?
-    var firstDose: String?
-    var hr: String?
-    var index: Int?
-    
-    init(medName: String, medType: String, firstDose: String, hr: String, index: Int?) {
-        self.medName = medName
-        self.medType = medType
-        self.firstDose = firstDose
-        self.hr = hr
-        self.index = index
-    }
-    init() {}
-}

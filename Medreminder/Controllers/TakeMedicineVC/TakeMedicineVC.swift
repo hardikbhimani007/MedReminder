@@ -26,7 +26,6 @@ class TakeMedicineVC: UIViewController {
     let realm = try! Realm()
     let homeVC = HomeVC()
     let objMed: MedDetalis? = nil
-    var data: GetData = GetData()
     var medName = ""
     var medType = ""
     var med1 = ""
@@ -63,14 +62,18 @@ class TakeMedicineVC: UIViewController {
             realm.delete(deleteData)
         })
     }
-    //MARK: - Button Actions
-    @objc func tappedCancelBtn() {
+    
+    func setRootView() {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
         APP_DELEGATE.appNavigation = UINavigationController(rootViewController: nextViewController) // set RootViewController
         APP_DELEGATE.appNavigation?.isNavigationBarHidden = false
         APP_DELEGATE.window?.makeKeyAndVisible()
         APP_DELEGATE.window?.rootViewController = APP_DELEGATE.appNavigation
+    }
+    //MARK: - Button Actions
+    @objc func tappedCancelBtn() {
+        setRootView()
     }
     
     @objc func tappedEditBtn() {
@@ -80,27 +83,13 @@ class TakeMedicineVC: UIViewController {
         self.navigationController?.pushViewController(storyBoard, animated: true)
     }
     
-    @objc func tappedTakeBtn() {
-      deleteDataFromDataBase()
-    }
-    
     @IBAction func tappedDeleteBtn(_ sender: UIButton) {
         deleteDataFromDataBase()
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
-        APP_DELEGATE.appNavigation = UINavigationController(rootViewController: nextViewController) // set RootViewController
-        APP_DELEGATE.appNavigation?.isNavigationBarHidden = false
-        APP_DELEGATE.window?.makeKeyAndVisible()
-        APP_DELEGATE.window?.rootViewController = APP_DELEGATE.appNavigation
+        setRootView()
     }
     
     @IBAction func tappedTakeBtn(_ sender: UIButton) {
         deleteDataFromDataBase()
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
-        APP_DELEGATE.appNavigation = UINavigationController(rootViewController: nextViewController) // set RootViewController
-        APP_DELEGATE.appNavigation?.isNavigationBarHidden = false
-        APP_DELEGATE.window?.makeKeyAndVisible()
-        APP_DELEGATE.window?.rootViewController = APP_DELEGATE.appNavigation
+        setRootView()
     }
 }

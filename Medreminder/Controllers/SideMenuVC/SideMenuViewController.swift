@@ -96,13 +96,13 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == arrMenu1.count - 1 {
                 cell.lineLbl.isHidden = false
             }
-        } else  if indexPath.section == 1 {
+        } else if indexPath.section == 1 {
             cell.menuLbl.text = arrMenu2[indexPath.row].SideMenuName
             cell.menuImgView.isHidden = true
             if indexPath.row == arrMenu2.count - 1 {
                 cell.lineLbl.isHidden = false
             }
-        } else  if indexPath.section == 2 {
+        } else if indexPath.section == 2 {
             cell.menuLbl.text = arrMenu3[indexPath.row].SideMenuName
             cell.menuImgView.isHidden = false
             cell.imgViewLeadingConstraint.constant = 30
@@ -110,7 +110,7 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.row == arrMenu3.count - 1 {
                 cell.lineLbl.isHidden = false
             }
-        } else  if indexPath.section == 3 {
+        } else if indexPath.section == 3 {
             cell.menuLbl.text = arrMenu4[indexPath.row].SideMenuName
             cell.menuImgView.isHidden = true
             if indexPath.row == arrMenu4.count - 1 {
