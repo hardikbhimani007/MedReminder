@@ -21,9 +21,10 @@ class MedicationVC: UIViewController {
     @IBOutlet weak var calenderView: UIView!
     @IBOutlet weak var fsDateView: FSCalendar!
     @IBOutlet weak var cancelBtn: UIButton!
-    //MARK: - Properties
+    
+    // MARK: - Properties
+    var presenter: ViewToPresenterMedicationProtocol?
     var arrMedDetalis = [MedicineDetalis]()
-    let realm = try! Realm()
     fileprivate var theme: Int = 0 {
         didSet {
             switch (theme) {
@@ -60,9 +61,9 @@ class MedicationVC: UIViewController {
         }
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        MedicationRouter.createModule(vc: self)
         navigationController?.navigationBar.isHidden = true
         setUp()
     }
@@ -70,42 +71,23 @@ class MedicationVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getDataFromDataBase()
-        let tittle = NSMutableAttributedString(string: "\(localized(key: "BOOK APPOINTMENT"))", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 7.2, weight: .bold)])
-        bookAppointmetBtn.setAttributedTitle(tittle, for: .normal)
+        presenter?.showChangesTittle(name: "\(localized(key: "BOOK APPOINTMENT"))", btn: bookAppointmetBtn)
     }
     //MARK: - Functions
     func setUp() {
-        fsDateView.layer.cornerRadius = 4
-        bookAppointmetBtn.layer.cornerRadius = 10
+        presenter?.setUp(datePicker: fsDateView, button: bookAppointmetBtn)
         fsDateView.delegate = self
         fsDateView.dataSource = self
-        registerNib()
+        presenter?.registerNibShow(tableView: tableViewMedication, nibName: "MedicineDetalisTableViewCell", forCellReuseIdentifier: "MedicineDetalisTableViewCell")
         BtnActions()
     }
     
     func getDataFromDataBase() {
-        let getData = Array(realm.objects(MedicineDetalis.self))
-        arrMedDetalis = getData
-        tableViewMedication.reloadData()
-    }
-    
-    private func registerNib() {
-        tableViewMedication.register(UINib(nibName: "MedicineDetalisTableViewCell", bundle: nil), forCellReuseIdentifier: "MedicineDetalisTableViewCell")
-        tableViewMedication.separatorStyle = .none
+        presenter?.showDataFromView(tableView: tableViewMedication)
     }
     
     func setContextMenuForm() {
-        let AddMedication = UIAction(title: "\(localized(key: "Add medication"))") { action in
-            print("Medication")
-        }
-        let AddDose = UIAction(title: "\(localized(key: "Add Dose"))") { action in
-            print("Dose")
-        }
-        let AddNotes = UIAction(title: "\(localized(key: "Add Notes"))") { action in
-            print("Notes")
-        }
-        addBtn.showsMenuAsPrimaryAction = true
-        addBtn.menu = UIMenu(title: "", children: [AddNotes, AddDose, AddMedication])
+        presenter?.showContextMenu(tittle1: "\(localized(key: "Add medication"))", tittle2: "\(localized(key: "Add Dose"))", tittle3: "\(localized(key: "Add Notes"))", addBtn: addBtn, navigationController: navigationController!)
     }
     //MARK: - Button Actions
     func BtnActions() {
@@ -123,10 +105,7 @@ class MedicationVC: UIViewController {
     
     @objc func tappedCelenderBtn() {
         calenderView.isHidden = false
-        self.fsDateView.appearance.caseOptions = [.headerUsesUpperCase,.weekdayUsesUpperCase]
-        let scopeGesture = UIPanGestureRecognizer(target: self.fsDateView, action: #selector(self.fsDateView.handleScopeGesture(_:)))
-        self.fsDateView.addGestureRecognizer(scopeGesture)
-        self.fsDateView.accessibilityIdentifier = "calendar"
+        presenter?.tapGesture(datePickerView: fsDateView)
     }
     
     @objc func tappedCancelBtn() {
@@ -134,19 +113,17 @@ class MedicationVC: UIViewController {
     }
     
     @objc func tappedVolumeBtn() {
-        let vc = UIStoryboard(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "SoundVC") as! SoundVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        presenter?.showToVC(storyBoardName: "Home", withIdentifier: "SoundVC", navigationController: navigationController!)
     }
     
     @objc func tappedDocumnetBtn() {
-        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromLeft
         navigationController?.view.layer.add(transition, forKey: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        presenter?.showToVC(storyBoardName: "Home", withIdentifier: "SideMenuViewController", navigationController: navigationController!)
     }
 }
 //MARK: - UITableViewDelegate & UITableViewDataSource
@@ -157,14 +134,7 @@ extension MedicationVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MedicineDetalisTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MedicineDetalisTableViewCell") as! MedicineDetalisTableViewCell
-        cell.MedicineNameLbl.text = arrMedDetalis[indexPath.row].medicineName
-        cell.MedTypeLbl.text = "1 \(arrMedDetalis[indexPath.row].medicineType ?? "")"
-        cell.takingLbl.text = arrMedDetalis[indexPath.row].firstDose
-        let ampm = arrMedDetalis[indexPath.row].hr ?? 0 >= 12 ? "PM" : "AM"
-        let formatedTime = String(format: "%02d:%02d %@", arrMedDetalis[indexPath.row].hr!, arrMedDetalis[indexPath.row].min!, ampm)
-        cell.timerLbl.text = formatedTime
-        return cell
+        presenter?.loadDataForCell(tableView: tableView, arrMedDtalis: arrMedDetalis, indexPath: indexPath) ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -187,5 +157,13 @@ extension MedicationVC: FSCalendarDelegate, FSCalendarDataSource {
         dateComponents.day = 28
         let currentCalander:Calendar = Calendar.current
         return currentCalander.date(byAdding:dateComponents, to: Date())!
+    }
+}
+
+extension MedicationVC: PresenterToViewMedicationProtocol{
+    // TODO: Implement View Output Methods
+    func showData(arrMedDetalis: [MedicineDetalis]) {
+        self.arrMedDetalis = arrMedDetalis
+        self.tableViewMedication.reloadData()
     }
 }

@@ -14,6 +14,5 @@ class TabBarVC: UITabBarController {
         navigationController?.navigationBar.isHidden = true
         tabBar.tintColor = .white
         tabBar.unselectedItemTintColor = .cyan
-        
     }
 }

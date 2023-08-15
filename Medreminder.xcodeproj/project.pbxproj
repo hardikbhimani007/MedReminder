@@ -21,6 +21,23 @@
 		E0651DB12A77D1BA00BD7149 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E0651DB02A77D1BA00BD7149 /* Realm */; };
 		E0651DB32A77D1BA00BD7149 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E0651DB22A77D1BA00BD7149 /* RealmSwift */; };
 		E0651DB52A77D2CB00BD7149 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0651DB42A77D2CB00BD7149 /* Database.swift */; };
+		E078D5742A8B34A200904D42 /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D56F2A8B34A200904D42 /* HomeContract.swift */; };
+		E078D5752A8B34A200904D42 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5702A8B34A200904D42 /* HomePresenter.swift */; };
+		E078D5762A8B34A200904D42 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5712A8B34A200904D42 /* HomeRouter.swift */; };
+		E078D5782A8B34A200904D42 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5732A8B34A200904D42 /* HomeInteractor.swift */; };
+		E078D5822A8B462900904D42 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5812A8B462900904D42 /* RealmModel.swift */; };
+		E078D5882A8B793600904D42 /* MedicationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5832A8B793600904D42 /* MedicationContract.swift */; };
+		E078D5892A8B793600904D42 /* MedicationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5842A8B793600904D42 /* MedicationPresenter.swift */; };
+		E078D58A2A8B793600904D42 /* MedicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5852A8B793600904D42 /* MedicationRouter.swift */; };
+		E078D58C2A8B793600904D42 /* MedicationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5872A8B793600904D42 /* MedicationInteractor.swift */; };
+		E078D5982A8B7E9400904D42 /* GuideContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5932A8B7E9400904D42 /* GuideContract.swift */; };
+		E078D5992A8B7E9400904D42 /* GuidePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5942A8B7E9400904D42 /* GuidePresenter.swift */; };
+		E078D59A2A8B7E9400904D42 /* GuideRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5952A8B7E9400904D42 /* GuideRouter.swift */; };
+		E078D59C2A8B7E9400904D42 /* GuideInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5972A8B7E9400904D42 /* GuideInteractor.swift */; };
+		E078D5A72A8B8AE600904D42 /* AddMedicationContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5A22A8B8AE600904D42 /* AddMedicationContract.swift */; };
+		E078D5A82A8B8AE600904D42 /* AddMedicationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5A32A8B8AE600904D42 /* AddMedicationPresenter.swift */; };
+		E078D5A92A8B8AE600904D42 /* AddMedicationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5A42A8B8AE600904D42 /* AddMedicationRouter.swift */; };
+		E078D5AB2A8B8AE600904D42 /* AddMedicationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E078D5A62A8B8AE600904D42 /* AddMedicationInteractor.swift */; };
 		E0842E382A7766AC002961B0 /* MedicinePurposeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0842E372A7766AC002961B0 /* MedicinePurposeVC.swift */; };
 		E0842E3B2A7773A5002961B0 /* MedicineNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0842E392A7773A5002961B0 /* MedicineNameTableViewCell.swift */; };
 		E0842E3C2A7773A5002961B0 /* MedicineNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0842E3A2A7773A5002961B0 /* MedicineNameTableViewCell.xib */; };
@@ -68,6 +85,23 @@
 		E058EDF12A73C58400CAFF58 /* MedicineTypeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineTypeTableViewCell.xib; sourceTree = "<group>"; };
 		E0651DAD2A77BA5800BD7149 /* SetTimerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimerVC.swift; sourceTree = "<group>"; };
 		E0651DB42A77D2CB00BD7149 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		E078D56F2A8B34A200904D42 /* HomeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
+		E078D5702A8B34A200904D42 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		E078D5712A8B34A200904D42 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		E078D5732A8B34A200904D42 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		E078D5812A8B462900904D42 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		E078D5832A8B793600904D42 /* MedicationContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationContract.swift; sourceTree = "<group>"; };
+		E078D5842A8B793600904D42 /* MedicationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationPresenter.swift; sourceTree = "<group>"; };
+		E078D5852A8B793600904D42 /* MedicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationRouter.swift; sourceTree = "<group>"; };
+		E078D5872A8B793600904D42 /* MedicationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationInteractor.swift; sourceTree = "<group>"; };
+		E078D5932A8B7E9400904D42 /* GuideContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideContract.swift; sourceTree = "<group>"; };
+		E078D5942A8B7E9400904D42 /* GuidePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidePresenter.swift; sourceTree = "<group>"; };
+		E078D5952A8B7E9400904D42 /* GuideRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideRouter.swift; sourceTree = "<group>"; };
+		E078D5972A8B7E9400904D42 /* GuideInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideInteractor.swift; sourceTree = "<group>"; };
+		E078D5A22A8B8AE600904D42 /* AddMedicationContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationContract.swift; sourceTree = "<group>"; };
+		E078D5A32A8B8AE600904D42 /* AddMedicationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationPresenter.swift; sourceTree = "<group>"; };
+		E078D5A42A8B8AE600904D42 /* AddMedicationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationRouter.swift; sourceTree = "<group>"; };
+		E078D5A62A8B8AE600904D42 /* AddMedicationInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMedicationInteractor.swift; sourceTree = "<group>"; };
 		E0842E372A7766AC002961B0 /* MedicinePurposeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinePurposeVC.swift; sourceTree = "<group>"; };
 		E0842E392A7773A5002961B0 /* MedicineNameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineNameTableViewCell.swift; sourceTree = "<group>"; };
 		E0842E3A2A7773A5002961B0 /* MedicineNameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MedicineNameTableViewCell.xib; sourceTree = "<group>"; };
@@ -241,7 +275,11 @@
 		E058EDE52A7390E400CAFF58 /* MedicationVC */ = {
 			isa = PBXGroup;
 			children = (
-				E058EDDC2A7376AA00CAFF58 /* MedicationVC.swift */,
+				E078D58F2A8B79E100904D42 /* Protocol */,
+				E078D5922A8B7A0300904D42 /* Interactor */,
+				E078D5902A8B79EB00904D42 /* Presenter */,
+				E078D5912A8B79F700904D42 /* Router */,
+				E078D58D2A8B79CB00904D42 /* View */,
 			);
 			path = MedicationVC;
 			sourceTree = "<group>";
@@ -253,6 +291,177 @@
 				E058EDF12A73C58400CAFF58 /* MedicineTypeTableViewCell.xib */,
 			);
 			path = MedicineTypeTableViewCell;
+			sourceTree = "<group>";
+		};
+		E078D5792A8B34F000904D42 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E078D56F2A8B34A200904D42 /* HomeContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E078D57A2A8B34FE00904D42 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5702A8B34A200904D42 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E078D57B2A8B350F00904D42 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5712A8B34A200904D42 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E078D57C2A8B351C00904D42 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5732A8B34A200904D42 /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E078D57D2A8B352C00904D42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0FA77C72A7252FA004EADEC /* HomeVC.swift */,
+				E058EDE12A738DFB00CAFF58 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E078D57E2A8B421800904D42 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5812A8B462900904D42 /* RealmModel.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		E078D58D2A8B79CB00904D42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E058EDDC2A7376AA00CAFF58 /* MedicationVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E078D58F2A8B79E100904D42 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5832A8B793600904D42 /* MedicationContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E078D5902A8B79EB00904D42 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5842A8B793600904D42 /* MedicationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E078D5912A8B79F700904D42 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5852A8B793600904D42 /* MedicationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E078D5922A8B7A0300904D42 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5872A8B793600904D42 /* MedicationInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E078D59D2A8B7F1800904D42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0AC74902A792D3700896E1A /* GuideVC.swift */,
+				E095BEFB2A7A09B300702CDE /* GuideTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E078D59E2A8B7F2600904D42 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5932A8B7E9400904D42 /* GuideContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E078D59F2A8B7F2E00904D42 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5942A8B7E9400904D42 /* GuidePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E078D5A02A8B7F3600904D42 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5952A8B7E9400904D42 /* GuideRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E078D5A12A8B7F3C00904D42 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5972A8B7E9400904D42 /* GuideInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E078D5AC2A8B8B6300904D42 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E058EDE62A73913300CAFF58 /* AddMedicationVC.swift */,
+				E0842E3D2A777422002961B0 /* MedicineNameTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E078D5AD2A8B8B6A00904D42 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5A22A8B8AE600904D42 /* AddMedicationContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E078D5AE2A8B8B7100904D42 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5A32A8B8AE600904D42 /* AddMedicationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E078D5AF2A8B8B7800904D42 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5A42A8B8AE600904D42 /* AddMedicationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E078D5B02A8B8B7E00904D42 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E078D5A62A8B8AE600904D42 /* AddMedicationInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		E0842E3D2A777422002961B0 /* MedicineNameTableViewCell */ = {
@@ -315,8 +524,11 @@
 		E0AC748E2A792C2600896E1A /* AddMedicationVC */ = {
 			isa = PBXGroup;
 			children = (
-				E058EDE62A73913300CAFF58 /* AddMedicationVC.swift */,
-				E0842E3D2A777422002961B0 /* MedicineNameTableViewCell */,
+				E078D5AD2A8B8B6A00904D42 /* Protocol */,
+				E078D5B02A8B8B7E00904D42 /* Interactor */,
+				E078D5AE2A8B8B7100904D42 /* Presenter */,
+				E078D5AF2A8B8B7800904D42 /* Router */,
+				E078D5AC2A8B8B6300904D42 /* View */,
 			);
 			path = AddMedicationVC;
 			sourceTree = "<group>";
@@ -324,8 +536,11 @@
 		E0AC74922A792D5000896E1A /* GuideVC */ = {
 			isa = PBXGroup;
 			children = (
-				E0AC74902A792D3700896E1A /* GuideVC.swift */,
-				E095BEFB2A7A09B300702CDE /* GuideTableViewCell */,
+				E078D59E2A8B7F2600904D42 /* Protocol */,
+				E078D5A12A8B7F3C00904D42 /* Interactor */,
+				E078D59F2A8B7F2E00904D42 /* Presenter */,
+				E078D5A02A8B7F3600904D42 /* Router */,
+				E078D59D2A8B7F1800904D42 /* View */,
 			);
 			path = GuideVC;
 			sourceTree = "<group>";
@@ -416,8 +631,12 @@
 		E0FA77D22A726B39004EADEC /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E0FA77C72A7252FA004EADEC /* HomeVC.swift */,
-				E058EDE12A738DFB00CAFF58 /* Cell */,
+				E078D57E2A8B421800904D42 /* Entity */,
+				E078D5792A8B34F000904D42 /* Protocol */,
+				E078D57C2A8B351C00904D42 /* Interactor */,
+				E078D57A2A8B34FE00904D42 /* Presenter */,
+				E078D57B2A8B350F00904D42 /* Router */,
+				E078D57D2A8B352C00904D42 /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -556,8 +775,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E095BEF92A7A09AD00702CDE /* GuideTableViewCell.swift in Sources */,
+				E078D5892A8B793600904D42 /* MedicationPresenter.swift in Sources */,
 				E058EDEF2A73C1F700CAFF58 /* Model.swift in Sources */,
 				E0842E3B2A7773A5002961B0 /* MedicineNameTableViewCell.swift in Sources */,
+				E078D5752A8B34A200904D42 /* HomePresenter.swift in Sources */,
+				E078D59A2A8B7E9400904D42 /* GuideRouter.swift in Sources */,
+				E078D5AB2A8B8AE600904D42 /* AddMedicationInteractor.swift in Sources */,
+				E078D58C2A8B793600904D42 /* MedicationInteractor.swift in Sources */,
 				E058EDED2A73BA3300CAFF58 /* MedicineTypeVC.swift in Sources */,
 				E0651DAE2A77BA5800BD7149 /* SetTimerVC.swift in Sources */,
 				E0FA77C82A7252FA004EADEC /* HomeVC.swift in Sources */,
@@ -567,23 +791,35 @@
 				E058EDE72A73913300CAFF58 /* AddMedicationVC.swift in Sources */,
 				E0842E3F2A779255002961B0 /* MonthlySchedulVC.swift in Sources */,
 				E0D5CF1F2A81F816006A610E /* LangugeManager.swift in Sources */,
+				E078D5882A8B793600904D42 /* MedicationContract.swift in Sources */,
+				E078D5A82A8B8AE600904D42 /* AddMedicationPresenter.swift in Sources */,
+				E078D59C2A8B7E9400904D42 /* GuideInteractor.swift in Sources */,
+				E078D58A2A8B793600904D42 /* MedicationRouter.swift in Sources */,
+				E078D5742A8B34A200904D42 /* HomeContract.swift in Sources */,
+				E078D5A72A8B8AE600904D42 /* AddMedicationContract.swift in Sources */,
 				E095BF022A7A5B6200702CDE /* SideMenuTableViewCell.swift in Sources */,
 				E0B7BAF72A77B4CF0051C398 /* FirstDoseCollectionViewCell.swift in Sources */,
+				E078D5A92A8B8AE600904D42 /* AddMedicationRouter.swift in Sources */,
 				E0842E432A77B1A8002961B0 /* FirstDoseVC.swift in Sources */,
+				E078D5992A8B7E9400904D42 /* GuidePresenter.swift in Sources */,
 				E095BEFD2A7A11F800702CDE /* GuideModel.swift in Sources */,
 				E058EDDD2A7376AA00CAFF58 /* MedicationVC.swift in Sources */,
 				E0FA77C52A724BB7004EADEC /* TabBarVC.swift in Sources */,
 				E0FA77CF2A726B27004EADEC /* MedicineDetalisTableViewCell.swift in Sources */,
+				E078D5762A8B34A200904D42 /* HomeRouter.swift in Sources */,
 				E095BEFF2A7A586D00702CDE /* SideMenuViewController.swift in Sources */,
 				E0FA77AE2A7244E2004EADEC /* AppDelegate.swift in Sources */,
 				E0AC74912A792D3700896E1A /* GuideVC.swift in Sources */,
 				E0842E412A77ABDA002961B0 /* WeeklyScheduleViewController.swift in Sources */,
 				E095BF072A7A5C5600702CDE /* SideMenu.swift in Sources */,
 				E0FA77CC2A726824004EADEC /* HeaderView.swift in Sources */,
+				E078D5982A8B7E9400904D42 /* GuideContract.swift in Sources */,
 				E0651DB52A77D2CB00BD7149 /* Database.swift in Sources */,
+				E078D5822A8B462900904D42 /* RealmModel.swift in Sources */,
 				E0AC748D2A78D3CE00896E1A /* SoundVC.swift in Sources */,
 				E03E258D2A73DEBF00A628D9 /* MedicineStrengthVC.swift in Sources */,
 				E092D6EE2A7CCD4000419C34 /* AppConstant.swift in Sources */,
+				E078D5782A8B34A200904D42 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,8 +8,6 @@
 import UIKit
 import AVKit
 import AVFoundation
-import MediaPlayer
-import AudioToolbox
 
 class GuideVC: UIViewController {
 
@@ -18,15 +16,16 @@ class GuideVC: UIViewController {
     @IBOutlet weak var documentBtn: UIButton!
     @IBOutlet weak var backBtn: UIButton!
     @IBOutlet weak var tableViewGuide: UITableView!
-    //MARK: - Properties
+    
+    // MARK: - Properties
+    var presenter: ViewToPresenterGuideProtocol?
     var arrGuide = [Guide]()
-    var playerViewController = AVPlayerViewController()
-    var playerView = AVPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        GuideRouter.createModule(vc: self)
         navigationController?.navigationBar.isHidden = true
-        nibRegister()
+        presenter?.showRegisterNib(tableView: tableViewGuide, nibName: "GuideTableViewCell", forCellReuseIdentifier: "GuideTableViewCell")
         volumeBtn.addTarget(self, action: #selector(tappedvolumeBtn), for: .touchUpInside)
         documentBtn.addTarget(self, action: #selector(tappedDocumnetBtn), for: .touchUpInside)
     }
@@ -39,30 +38,21 @@ class GuideVC: UIViewController {
     
     //MARK: - Actions
     @objc func tappedvolumeBtn() {
-        let stroyBoard = UIStoryboard(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "SoundVC") as! SoundVC
-        self.navigationController?.pushViewController(stroyBoard, animated: true)
+        presenter?.showPuchVC(storyBoardName: "Home", withIdentifier: "SoundVC", navigationController: navigationController!)
     }
     
     @objc func tappedDocumnetBtn() {
-        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromLeft
-        navigationController?.view.layer.add(transition, forKey: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func nibRegister() {
-        tableViewGuide.register(UINib(nibName: "GuideTableViewCell", bundle: nil), forCellReuseIdentifier: "GuideTableViewCell")
+        navigationController!.view.layer.add(transition, forKey: nil)
+        presenter?.showPuchVC(storyBoardName: "Home", withIdentifier: "SideMenuViewController", navigationController: navigationController!)
     }
    
     func loadData() {
-        let data1 = Guide(name: "\(localized(key: "How to add new medicine?"))", videoURL: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-        let data2 = Guide(name: "\(localized(key: "How to add new medicine?"))", videoURL: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-        let data3 = Guide(name: "\(localized(key: "How to add new medicine?"))", videoURL: "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4")
-        arrGuide = [data1, data2, data3]
+        presenter?.fetchData()
     }
 }
 //MARK: - UITableViewDelegate, UITableViewDataSource & AVPlayerViewControllerDelegate
@@ -87,17 +77,14 @@ extension GuideVC: UITableViewDelegate, UITableViewDataSource, AVPlayerViewContr
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        playVideo(videoURL: arrGuide[indexPath.row].videoURL)
+        presenter?.showVideo(videoURL: arrGuide[indexPath.row].videoURL, navigationController: navigationController!)
     }
-    
-    func playVideo(videoURL: String) {
-        let url: URL = URL(string: videoURL)!
-        playerView = AVPlayer(url: url)
-        playerViewController.player = playerView
-        DispatchQueue.main.async {
-            self.present(self.playerViewController, animated: true, completion: {
-                self.playerViewController.player?.play()
-            })
-        }
+}
+
+extension GuideVC: PresenterToViewGuideProtocol{
+    // TODO: Implement View Output Methods
+    func showData(arrGuide: [Guide]) {
+        self.arrGuide = arrGuide
+        self.tableViewGuide.reloadData()
     }
 }

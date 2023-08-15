@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 class SideMenuViewController: UIViewController {
     //MARK: - IBOutlet
