@@ -22,7 +22,9 @@ class SetTimerVC: UIViewController {
     @IBOutlet weak var minLbl: UILabel!
     @IBOutlet weak var secLbl: UILabel!
     @IBOutlet weak var updateBtn: UIButton!
-    //MARK: - Properties
+    
+    // MARK: - Properties
+    var presenter: ViewToPresenterSetTimerProtocol?
     var shouldShowUpdateButton = false
     let realm = try! Realm()
     var medicinePurpose = Medicine()
@@ -34,9 +36,9 @@ class SetTimerVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        SetTimerRouter.createModule(vc: self)
         getData()
-        nextBtn.layer.cornerRadius = 22.5
-        updateBtn.layer.cornerRadius = 22.5
+        presenter?.showBtn(nextBtn: nextBtn, updateBtn: updateBtn)
         timePicker.delegate = self
         nextBtn.addTarget(self, action: #selector(tappedDoneButton), for: .touchUpInside)
         BackBtn.addTarget(self, action: #selector(tappedBackBtn), for: .touchUpInside)
@@ -47,12 +49,7 @@ class SetTimerVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        hrLbl.text = "\(localized(key: "Hours"))"
-        minLbl.text = "\(localized(key: "Minutes"))"
-        secLbl.text = "\(localized(key: "Seconds"))"
-        setTimeLbl.text = "\(localized(key: "Set Time"))"
-        let tittle = NSMutableAttributedString(string: "\(localized(key: "Done"))", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .semibold)])
-        nextBtn.setAttributedTitle(tittle, for: .normal)
+        presenter?.showLblsAndBtn(hrLbl: hrLbl, minLbl: minLbl, secLbl: secLbl, setTimeLbl: setTimeLbl, nextBtn: nextBtn)
         setButtons()
     }
     //MARK: - Functions
@@ -61,55 +58,8 @@ class SetTimerVC: UIViewController {
         updateBtn.isHidden = !(objMedicine?.isEdit ?? false)
     }
     
-    func setLocalNotification() {
-        let center = UNUserNotificationCenter.current()
-        let content = UNMutableNotificationContent()
-        let notificationIdentifier = UUID().uuidString
-        var dateComponet = DateComponents()
-        content.title = "Notification on a certail date"
-        content.body = "This is a local notification on certain date"
-        content.sound = .default
-       
-        content.userInfo = ["MedName": "\(objMedicine?.medName ?? "")",
-                            "MedType": "\(objMedicine?.medType ?? "")",
-                            "FirstDose": "\(objMedicine?.firstDose ?? "")",
-                            "hr": hour,
-                            "Min": minute,
-                            "Sec": second
-        ]
-        dateComponet.hour = hour
-        dateComponet.minute = minute
-        dateComponet.second = second
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponet, repeats: false)
-        let request =   UNNotificationRequest(identifier: notificationIdentifier, content: content, trigger: trigger)
-        center.add(request) { (error) in
-            if error != nil {
-                print("Error = \(error?.localizedDescription ?? "error local notification")")
-            }
-        }
-    }
-    
     func getData() {
         medicineTitleLbl.text = medicinePurpose.medicineName
-    }
-    
-    func addDataFromDatabase() {
-        print(">>>>>>>",Realm.Configuration.defaultConfiguration.fileURL)
-        let detalis = MedicineDetalis()
-        objMedicine?.hr = hour
-        objMedicine?.min = minute
-        objMedicine?.sec = second
-        
-        detalis.medicineName = objMedicine?.medName
-        detalis.medicineType = objMedicine?.medType
-        detalis.firstDose = objMedicine?.firstDose
-        detalis.hr = objMedicine?.hr
-        detalis.min = objMedicine?.min
-        detalis.sec = objMedicine?.sec
-        
-        try! realm.write({
-            realm.add(detalis)
-        })
     }
     
     func formatTime() -> String {
@@ -120,8 +70,8 @@ class SetTimerVC: UIViewController {
     }
     //MARK: - Button Actions
     @objc func tappedDoneButton() {
-        setLocalNotification()
-        self.addDataFromDatabase()
+        presenter?.showLocalNotification(hour: hour, minute: minute, second: second, objMedicine: objMedicine)
+        presenter?.addDataFrom(hour: hour, minute: minute, second: second, objMedicine: objMedicine)
         self.tabBarController?.selectedIndex = 0
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -131,32 +81,21 @@ class SetTimerVC: UIViewController {
     }
     
     @objc func tappedVolumeBtn() {
-        let vc = UIStoryboard(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "SoundVC") as! SoundVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        presenter?.showToVC(storyBoardName: "Home", withIdentifier: "SoundVC", navigationController: navigationController!)
     }
     
     @objc func tappedDocumnetBtn() {
-        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromLeft
-        navigationController?.view.layer.add(transition, forKey: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController!.view.layer.add(transition, forKey: nil)
+        presenter?.showToVC(storyBoardName: "Home", withIdentifier: "SideMenuViewController", navigationController: navigationController!)
     }
     
     @objc func tappedUpdateBtn() {
-         try! realm.write({
-             let update = realm.objects(MedicineDetalis.self)[objMedicine?.index ?? 0]
-             update.medicineName = objMedicine?.medName
-             update.medicineType = objMedicine?.medType
-             update.firstDose = objMedicine?.firstDose
-             update.hr = hour
-             update.min = minute
-             update.sec = second
-         })
-        self.navigationController?.popToRootViewController(animated: true)
+        presenter?.updateData(objMedicine: objMedicine, hour: hour, minute: minute, second: second, navigationController: navigationController!)
      }
 }
 //MARK: - UIPickerViewDelegate & UIPickerViewDataSource
@@ -236,5 +175,12 @@ extension SetTimerVC: UIPickerViewDelegate, UIPickerViewDataSource {
             break
         }
         return label
+    }
+}
+
+extension SetTimerVC: PresenterToViewSetTimerProtocol{
+    // TODO: Implement View Output Methods
+    func showTime(objMedicine: MedDetalis?) {
+        self.objMedicine = objMedicine
     }
 }

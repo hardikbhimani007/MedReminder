@@ -29,7 +29,6 @@ class AddMedicationVC: UIViewController {
     var filtered = false
     var isUpdate = false
     var index: Int?
-    var objMedDetails: MedDetalis?
     
     override func viewDidLoad() {
         super.viewDidLoad()

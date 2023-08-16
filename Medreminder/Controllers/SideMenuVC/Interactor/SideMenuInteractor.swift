@@ -1,39 +1,22 @@
 //
-//  SideMenuViewController.swift
+//  SideMenuInteractor.swift
 //  Medreminder
 //
-//  Created by MacOS on 02/08/2023.
+//  Created by MacOS on 16/08/2023.
+//  
 //
 
+import Foundation
 import UIKit
 
-class SideMenuViewController: UIViewController {
-    //MARK: - IBOutlet
-    @IBOutlet weak var cancelBtn: UIButton!
-    @IBOutlet weak var tableViewMenu: UITableView!
-    //MARK: - Properties
-    var arrMenu1 = [Menu]()
-    var arrMenu2 = [Menu]()
-    var arrMenu3 = [Menu]()
-    var arrMenu4 = [Menu]()
-    let arrImage: [String] = ["share","user","align"]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        nibRegister()
-        loadData()
-        cancelBtn.addTarget(self, action: #selector(tappedCancelBtn), for: .touchUpInside)
-    }
+class SideMenuInteractor: PresenterToInteractorSideMenuProtocol {
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tableViewMenu.reloadData()
-    }
+    // MARK: Properties
+    var presenter: InteractorToPresenterSideMenuProtocol?
     
-    //MARK: - Functions
-    func nibRegister() {
-        tableViewMenu.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SideMenuTableViewCell")
-        tableViewMenu.separatorStyle = .none
+    func registerNib(tableView: UITableView) {
+        tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SideMenuTableViewCell")
+        tableView.separatorStyle = .none
     }
     
     func loadData() {
@@ -45,49 +28,20 @@ class SideMenuViewController: UIViewController {
         let list6 = Menu(SideMenuName: "\(localized(key: "Refills"))")
         let list7 = Menu(SideMenuName: "\(localized(key: "Track Health"))")
         let list8 = Menu(SideMenuName: "\(localized(key: "Medicine information"))")
-        arrMenu1 = [list1, list2, list3, list4, list5, list6, list7, list8]
         
         let list9 = Menu(SideMenuName: "\(localized(key: "Change language"))")
         let list10 = Menu(SideMenuName: "\(localized(key: "Theme"))")
-        arrMenu2 = [list9, list10]
         
         let list11 = Menu(SideMenuName: "\(localized(key: "Share your progress"))")
         let list12 = Menu(SideMenuName: "\(localized(key: "Invite friends and family"))")
         let list13 = Menu(SideMenuName: "\(localized(key: "Enter Invaitation code"))")
-        arrMenu3 = [list11, list12, list13]
         
         let list14 = Menu(SideMenuName: "\(localized(key: "Customer service"))")
         let list15 = Menu(SideMenuName: "\(localized(key: "Help and support"))")
-        arrMenu4 = [list14, list15]
+        presenter?.showDataSucessfully(arrMenu1: [list1, list2, list3, list4, list5, list6, list7, list8], arrMenu2: [list9, list10], arrMenu3: [list11, list12, list13], arrMenu4: [list14, list15])
     }
-    //MARK: - Button Actions
-    @objc func tappedCancelBtn() {
-        let transition:CATransition = CATransition()
-        transition.duration = 0.3
-        transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        transition.type = .push
-        transition.subtype = .fromRight
-        self.navigationController?.view.layer.add(transition, forKey: kCATransition)
-        navigationController?.popViewController(animated: true)
-    }
-}
-//MARK: - UITableViewDelegate & UITableViewDataSource
-extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 4
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0: return arrMenu1.count
-        case 1: return arrMenu2.count
-        case 2: return arrMenu3.count
-        case 3: return arrMenu4.count
-        default: return arrMenu1.count
-        }
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    func cellFor(tableView: UITableView, arrMenu1: [Menu], arrMenu2: [Menu], arrMenu3: [Menu], arrMenu4: [Menu], arrImage: [String], indexPath: IndexPath) -> UITableViewCell {
         let cell: SideMenuTableViewCell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell") as! SideMenuTableViewCell
         if indexPath.section == 0 {
             cell.menuLbl.text = arrMenu1[indexPath.row].SideMenuName
@@ -119,9 +73,4 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
-
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
 }
-

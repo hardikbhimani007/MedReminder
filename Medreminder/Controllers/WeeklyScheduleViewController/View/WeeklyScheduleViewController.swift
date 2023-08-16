@@ -16,15 +16,17 @@ class WeeklyScheduleViewController: UIViewController {
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var tableViewDaySchedule: UITableView!
     @IBOutlet weak var nextBtn: UIButton!
-    //MARK: - Properties
+    // MARK: - Properties
+    var presenter: ViewToPresenterWeeklyScheduleProtocol?
     var medicinePurpose = Medicine()
     var arrDaySchedule = [MedicineSchedul]()
     var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        WeeklyScheduleRouter.createModule(vc: self)
         getData()
-        registerNib()
+        presenter?.showRegisterNib(tableView: tableViewDaySchedule, nibName: "MedicineTypeTableViewCell", forCellReuseIdentifier: "MedicineTypeTableViewCell")
         nextBtn.layer.cornerRadius = 22.5
         nextBtn.addTarget(self, action: #selector(tappedNextBtn), for: .touchUpInside)
         backBtn.addTarget(self, action: #selector(tappedBackBtn), for: .touchUpInside)
@@ -34,39 +36,17 @@ class WeeklyScheduleViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadData()
-        questionLbl.text = "\(localized(key: "Choose the days you need to take the med"))"
-        let tittle = NSMutableAttributedString(string: "\(localized(key: "Next"))", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .semibold)])
-        nextBtn.setAttributedTitle(tittle, for: .normal)
-        tableViewDaySchedule.reloadData()
+        presenter?.showLoadedData()
+        presenter?.lblAndBtn(questionLbl: questionLbl, nextBtn: nextBtn, tableview: tableViewDaySchedule)
     }
     //MARK: - Functions
     func getData() {
         medicineTitleLbl.text = medicinePurpose.medicineName
     }
-
-    func registerNib() {
-        tableViewDaySchedule.register(UINib(nibName: "MedicineTypeTableViewCell", bundle: nil), forCellReuseIdentifier: "MedicineTypeTableViewCell")
-        tableViewDaySchedule.separatorStyle = .none
-    }
     
-    func loadData() {
-        let data1 = MedicineSchedul(time: "\(localized(key: "Sunday"))")
-        let data2 = MedicineSchedul(time: "\(localized(key: "Monday"))")
-        let data3 = MedicineSchedul(time: "\(localized(key: "Tuesday"))")
-        let data4 = MedicineSchedul(time: "\(localized(key: "Wednesday"))")
-        let data5 = MedicineSchedul(time: "\(localized(key: "Thursday"))")
-        let data6 = MedicineSchedul(time: "\(localized(key: "Friday"))")
-        let data7 = MedicineSchedul(time: "\(localized(key: "Saturday"))")
-        arrDaySchedule = [data1, data2, data3, data4, data5, data6, data7]
-    }
     //MARK: - Button Actions
     @objc func tappedNextBtn() {
-        let storyBoard = UIStoryboard(name: "MedicinePurpose", bundle: Bundle.main)
-        let vc = storyBoard.instantiateViewController(withIdentifier: "FirstDoseVC") as! FirstDoseVC
-        let detalis = Medicine(medicineName: medicineTitleLbl.text!)
-        vc.medicinePurpose = detalis
-        self.navigationController?.pushViewController(vc, animated: true)
+        presenter?.showToVCWithData(medicineTittle: medicineTitleLbl, navigationController: navigationController!)
     }
     
     @objc func tappedBackBtn() {
@@ -74,19 +54,17 @@ class WeeklyScheduleViewController: UIViewController {
     }
     
     @objc func tappedVolumeBtn() {
-        let vc = UIStoryboard(name: "Home", bundle: Bundle.main).instantiateViewController(withIdentifier: "SoundVC") as! SoundVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        presenter?.showToVC(storyBoardName: "Home", withIdentifier: "SoundVC", navigationController: navigationController!)
     }
     
     @objc func tappedDocumnetBtn() {
-        let vc = UIStoryboard(name: "Home", bundle: nil).instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
         let transition = CATransition()
         transition.duration = 0.5
         transition.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromLeft
-        navigationController?.view.layer.add(transition, forKey: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController!.view.layer.add(transition, forKey: nil)
+        presenter?.showToVC(storyBoardName: "Home", withIdentifier: "SideMenuViewController", navigationController: navigationController!)
     }
 }
 //MARK: - UITableViewDelegate & UITableViewDataSource
@@ -100,16 +78,7 @@ extension WeeklyScheduleViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MedicineTypeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MedicineTypeTableViewCell") as! MedicineTypeTableViewCell
-        let type = arrDaySchedule[indexPath.row]
-        cell.MedicineType.text = type.time
-        if selectedIndex == indexPath.row {
-            cell.selectionBtn.isSelected = true
-            nextBtn.isHidden = false
-        } else {
-            cell.selectionBtn.isSelected = false
-        }
-         return cell
+        presenter?.cellForRowAt(tableView: tableView, arrDaySchedule: arrDaySchedule, selectedIndex: selectedIndex, nextBtn: nextBtn, indexPath: indexPath) ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -119,5 +88,13 @@ extension WeeklyScheduleViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         tableView.reloadData()
+    }
+}
+
+extension WeeklyScheduleViewController: PresenterToViewWeeklyScheduleProtocol{
+    // TODO: Implement View Output Methods
+    func showData(arrDaySchedule: [MedicineSchedul]) {
+        self.arrDaySchedule = arrDaySchedule
+        self.tableViewDaySchedule.reloadData()
     }
 }

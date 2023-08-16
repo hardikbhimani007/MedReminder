@@ -20,11 +20,10 @@ class TakeMedicineVC: UIViewController {
     @IBOutlet weak var takeBtn: UIButton!
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var DeleteBtn: UIButton!
-    //MARK: - Properties
+    // MARK: - Properties
+    var presenter: ViewToPresenterTakeMedicineProtocol?
     var index: Int?
     var isUpdate: Bool?
-    let realm = try! Realm()
-    let homeVC = HomeVC()
     let objMed: MedDetalis? = nil
     var medName = ""
     var medType = ""
@@ -33,43 +32,25 @@ class TakeMedicineVC: UIViewController {
     var hr = 0
     var min = 0
     var sec = 0
-    var formatedTime = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TakeMedicineRouter.createModule(vc: self)
         takeView.layer.cornerRadius = 10
         takeBtn.layer.cornerRadius = 29
         editBtn.layer.cornerRadius = 29
-        setUpNotificationData()
+        presenter?.localNotification(med1: med1, medName: medName, medType: medType, firstDose: firstDose, medNameLbl: medNameLbl, medTypeLbl: medTypeLbl, schedulLbl: schedulLbl, timeLbl: timeLbl, hr: hr, min: min)
         cancelBtn.addTarget(self, action: #selector(tappedCancelBtn), for: .touchUpInside)
         editBtn.addTarget(self, action: #selector(tappedEditBtn), for: .touchUpInside)
     }
     
     //MARK: - Functions
-    func setUpNotificationData() {
-        med1 = "1 \(medType)"
-        medNameLbl.text = medName
-        medTypeLbl.text = med1
-        schedulLbl.text = firstDose
-        let ampm = hr >= 12 ? "PM" : "AM"
-        formatedTime = String(format: "%02d:%02d %@", hr, min, ampm)
-        timeLbl.text = formatedTime
-    }
-
     func deleteDataFromDataBase() {
-        let deleteData = realm.objects(MedicineDetalis.self)[index ?? 0]
-        try! realm.write({
-            realm.delete(deleteData)
-        })
+        presenter?.deleteDataFromDatabase(index: index ?? 0)
     }
     
     func setRootView() {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Home", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "TabBarVC") as! TabBarVC
-        APP_DELEGATE.appNavigation = UINavigationController(rootViewController: nextViewController) // set RootViewController
-        APP_DELEGATE.appNavigation?.isNavigationBarHidden = false
-        APP_DELEGATE.window?.makeKeyAndVisible()
-        APP_DELEGATE.window?.rootViewController = APP_DELEGATE.appNavigation
+        presenter?.showRootView()
     }
     //MARK: - Button Actions
     @objc func tappedCancelBtn() {
@@ -77,10 +58,7 @@ class TakeMedicineVC: UIViewController {
     }
     
     @objc func tappedEditBtn() {
-        let storyBoard = UIStoryboard(name: "AddMedication", bundle: nil).instantiateViewController(withIdentifier: "AddMedicationVC") as! AddMedicationVC
-        storyBoard.isUpdate = true
-        storyBoard.index = index
-        self.navigationController?.pushViewController(storyBoard, animated: true)
+        presenter?.showToVC(index: index, navigationController: navigationController!)
     }
     
     @IBAction func tappedDeleteBtn(_ sender: UIButton) {
@@ -92,4 +70,8 @@ class TakeMedicineVC: UIViewController {
         deleteDataFromDataBase()
         setRootView()
     }
+}
+
+extension TakeMedicineVC: PresenterToViewTakeMedicineProtocol{
+    // TODO: Implement View Output Methods
 }

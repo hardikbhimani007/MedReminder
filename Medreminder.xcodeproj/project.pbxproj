@@ -53,6 +53,50 @@
 		E095BF022A7A5B6200702CDE /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E095BF002A7A5B6200702CDE /* SideMenuTableViewCell.swift */; };
 		E095BF032A7A5B6200702CDE /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E095BF012A7A5B6200702CDE /* SideMenuTableViewCell.xib */; };
 		E095BF072A7A5C5600702CDE /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E095BF062A7A5C5600702CDE /* SideMenu.swift */; };
+		E09EF89B2A8C80D70089ED95 /* MedicineTypeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8962A8C80D70089ED95 /* MedicineTypeContract.swift */; };
+		E09EF89C2A8C80D70089ED95 /* MedicineTypePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8972A8C80D70089ED95 /* MedicineTypePresenter.swift */; };
+		E09EF89D2A8C80D70089ED95 /* MedicineTypeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8982A8C80D70089ED95 /* MedicineTypeRouter.swift */; };
+		E09EF89F2A8C80D70089ED95 /* MedicineTypeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF89A2A8C80D70089ED95 /* MedicineTypeInteractor.swift */; };
+		E09EF8AA2A8C92790089ED95 /* MedicineStrengthContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8A52A8C92790089ED95 /* MedicineStrengthContract.swift */; };
+		E09EF8AB2A8C92790089ED95 /* MedicineStrengthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8A62A8C92790089ED95 /* MedicineStrengthPresenter.swift */; };
+		E09EF8AC2A8C92790089ED95 /* MedicineStrengthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8A72A8C92790089ED95 /* MedicineStrengthRouter.swift */; };
+		E09EF8AE2A8C92790089ED95 /* MedicineStrengthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8A92A8C92790089ED95 /* MedicineStrengthInteractor.swift */; };
+		E09EF8B92A8C9D960089ED95 /* MedicinePurposeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8B42A8C9D960089ED95 /* MedicinePurposeContract.swift */; };
+		E09EF8BA2A8C9D960089ED95 /* MedicinePurposePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8B52A8C9D960089ED95 /* MedicinePurposePresenter.swift */; };
+		E09EF8BB2A8C9D960089ED95 /* MedicinePurposeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8B62A8C9D960089ED95 /* MedicinePurposeRouter.swift */; };
+		E09EF8BD2A8C9D960089ED95 /* MedicinePurposeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8B82A8C9D960089ED95 /* MedicinePurposeInteractor.swift */; };
+		E09EF8C82A8CAA890089ED95 /* MonthlySchedulContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8C32A8CAA890089ED95 /* MonthlySchedulContract.swift */; };
+		E09EF8C92A8CAA890089ED95 /* MonthlySchedulPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8C42A8CAA890089ED95 /* MonthlySchedulPresenter.swift */; };
+		E09EF8CA2A8CAA890089ED95 /* MonthlySchedulRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8C52A8CAA890089ED95 /* MonthlySchedulRouter.swift */; };
+		E09EF8CC2A8CAA890089ED95 /* MonthlySchedulInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8C72A8CAA890089ED95 /* MonthlySchedulInteractor.swift */; };
+		E09EF8DE2A8CC2360089ED95 /* WeeklyScheduleContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8DA2A8CC2360089ED95 /* WeeklyScheduleContract.swift */; };
+		E09EF8DF2A8CC2360089ED95 /* WeeklySchedulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8DB2A8CC2360089ED95 /* WeeklySchedulePresenter.swift */; };
+		E09EF8E02A8CC2360089ED95 /* WeeklyScheduleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8DC2A8CC2360089ED95 /* WeeklyScheduleRouter.swift */; };
+		E09EF8E12A8CC2360089ED95 /* WeeklyScheduleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8DD2A8CC2360089ED95 /* WeeklyScheduleInteractor.swift */; };
+		E09EF8EC2A8CC9520089ED95 /* FirstDoseContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8E72A8CC9520089ED95 /* FirstDoseContract.swift */; };
+		E09EF8ED2A8CC9520089ED95 /* FirstDosePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8E82A8CC9520089ED95 /* FirstDosePresenter.swift */; };
+		E09EF8EE2A8CC9520089ED95 /* FirstDoseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8E92A8CC9520089ED95 /* FirstDoseRouter.swift */; };
+		E09EF8F02A8CC9520089ED95 /* FirstDoseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8EB2A8CC9520089ED95 /* FirstDoseInteractor.swift */; };
+		E09EF8FB2A8CD1B40089ED95 /* SetTimerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8F62A8CD1B40089ED95 /* SetTimerContract.swift */; };
+		E09EF8FC2A8CD1B40089ED95 /* SetTimerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8F72A8CD1B40089ED95 /* SetTimerPresenter.swift */; };
+		E09EF8FD2A8CD1B40089ED95 /* SetTimerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8F82A8CD1B40089ED95 /* SetTimerRouter.swift */; };
+		E09EF8FF2A8CD1B40089ED95 /* SetTimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF8FA2A8CD1B40089ED95 /* SetTimerInteractor.swift */; };
+		E09EF90A2A8CE02A0089ED95 /* SoundContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9052A8CE02A0089ED95 /* SoundContract.swift */; };
+		E09EF90B2A8CE02A0089ED95 /* SoundPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9062A8CE02A0089ED95 /* SoundPresenter.swift */; };
+		E09EF90C2A8CE02A0089ED95 /* SoundRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9072A8CE02A0089ED95 /* SoundRouter.swift */; };
+		E09EF90E2A8CE02A0089ED95 /* SoundInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9092A8CE02A0089ED95 /* SoundInteractor.swift */; };
+		E09EF91A2A8CE8880089ED95 /* TakeMedicineContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9152A8CE8880089ED95 /* TakeMedicineContract.swift */; };
+		E09EF91B2A8CE8880089ED95 /* TakeMedicinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9162A8CE8880089ED95 /* TakeMedicinePresenter.swift */; };
+		E09EF91C2A8CE8880089ED95 /* TakeMedicineRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9172A8CE8880089ED95 /* TakeMedicineRouter.swift */; };
+		E09EF91E2A8CE8880089ED95 /* TakeMedicineInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9192A8CE8880089ED95 /* TakeMedicineInteractor.swift */; };
+		E09EF9292A8CEF8A0089ED95 /* TabBarContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9242A8CEF8A0089ED95 /* TabBarContract.swift */; };
+		E09EF92A2A8CEF8A0089ED95 /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9252A8CEF8A0089ED95 /* TabBarPresenter.swift */; };
+		E09EF92B2A8CEF8A0089ED95 /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9262A8CEF8A0089ED95 /* TabBarRouter.swift */; };
+		E09EF92D2A8CEF8A0089ED95 /* TabBarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9282A8CEF8A0089ED95 /* TabBarInteractor.swift */; };
+		E09EF9322A8CF3AF0089ED95 /* SideMenuContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF92E2A8CF3AF0089ED95 /* SideMenuContract.swift */; };
+		E09EF9332A8CF3AF0089ED95 /* SideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF92F2A8CF3AF0089ED95 /* SideMenuPresenter.swift */; };
+		E09EF9342A8CF3AF0089ED95 /* SideMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9302A8CF3AF0089ED95 /* SideMenuRouter.swift */; };
+		E09EF9352A8CF3AF0089ED95 /* SideMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E09EF9312A8CF3AF0089ED95 /* SideMenuInteractor.swift */; };
 		E0AC748D2A78D3CE00896E1A /* SoundVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC748C2A78D3CE00896E1A /* SoundVC.swift */; };
 		E0AC74912A792D3700896E1A /* GuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC74902A792D3700896E1A /* GuideVC.swift */; };
 		E0B7BAF72A77B4CF0051C398 /* FirstDoseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B7BAF52A77B4CF0051C398 /* FirstDoseCollectionViewCell.swift */; };
@@ -117,6 +161,50 @@
 		E095BF002A7A5B6200702CDE /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		E095BF012A7A5B6200702CDE /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		E095BF062A7A5C5600702CDE /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		E09EF8962A8C80D70089ED95 /* MedicineTypeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTypeContract.swift; sourceTree = "<group>"; };
+		E09EF8972A8C80D70089ED95 /* MedicineTypePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTypePresenter.swift; sourceTree = "<group>"; };
+		E09EF8982A8C80D70089ED95 /* MedicineTypeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTypeRouter.swift; sourceTree = "<group>"; };
+		E09EF89A2A8C80D70089ED95 /* MedicineTypeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineTypeInteractor.swift; sourceTree = "<group>"; };
+		E09EF8A52A8C92790089ED95 /* MedicineStrengthContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineStrengthContract.swift; sourceTree = "<group>"; };
+		E09EF8A62A8C92790089ED95 /* MedicineStrengthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineStrengthPresenter.swift; sourceTree = "<group>"; };
+		E09EF8A72A8C92790089ED95 /* MedicineStrengthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineStrengthRouter.swift; sourceTree = "<group>"; };
+		E09EF8A92A8C92790089ED95 /* MedicineStrengthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineStrengthInteractor.swift; sourceTree = "<group>"; };
+		E09EF8B42A8C9D960089ED95 /* MedicinePurposeContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinePurposeContract.swift; sourceTree = "<group>"; };
+		E09EF8B52A8C9D960089ED95 /* MedicinePurposePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinePurposePresenter.swift; sourceTree = "<group>"; };
+		E09EF8B62A8C9D960089ED95 /* MedicinePurposeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinePurposeRouter.swift; sourceTree = "<group>"; };
+		E09EF8B82A8C9D960089ED95 /* MedicinePurposeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinePurposeInteractor.swift; sourceTree = "<group>"; };
+		E09EF8C32A8CAA890089ED95 /* MonthlySchedulContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySchedulContract.swift; sourceTree = "<group>"; };
+		E09EF8C42A8CAA890089ED95 /* MonthlySchedulPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySchedulPresenter.swift; sourceTree = "<group>"; };
+		E09EF8C52A8CAA890089ED95 /* MonthlySchedulRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySchedulRouter.swift; sourceTree = "<group>"; };
+		E09EF8C72A8CAA890089ED95 /* MonthlySchedulInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlySchedulInteractor.swift; sourceTree = "<group>"; };
+		E09EF8DA2A8CC2360089ED95 /* WeeklyScheduleContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyScheduleContract.swift; sourceTree = "<group>"; };
+		E09EF8DB2A8CC2360089ED95 /* WeeklySchedulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklySchedulePresenter.swift; sourceTree = "<group>"; };
+		E09EF8DC2A8CC2360089ED95 /* WeeklyScheduleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyScheduleRouter.swift; sourceTree = "<group>"; };
+		E09EF8DD2A8CC2360089ED95 /* WeeklyScheduleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyScheduleInteractor.swift; sourceTree = "<group>"; };
+		E09EF8E72A8CC9520089ED95 /* FirstDoseContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDoseContract.swift; sourceTree = "<group>"; };
+		E09EF8E82A8CC9520089ED95 /* FirstDosePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDosePresenter.swift; sourceTree = "<group>"; };
+		E09EF8E92A8CC9520089ED95 /* FirstDoseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDoseRouter.swift; sourceTree = "<group>"; };
+		E09EF8EB2A8CC9520089ED95 /* FirstDoseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDoseInteractor.swift; sourceTree = "<group>"; };
+		E09EF8F62A8CD1B40089ED95 /* SetTimerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimerContract.swift; sourceTree = "<group>"; };
+		E09EF8F72A8CD1B40089ED95 /* SetTimerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimerPresenter.swift; sourceTree = "<group>"; };
+		E09EF8F82A8CD1B40089ED95 /* SetTimerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimerRouter.swift; sourceTree = "<group>"; };
+		E09EF8FA2A8CD1B40089ED95 /* SetTimerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTimerInteractor.swift; sourceTree = "<group>"; };
+		E09EF9052A8CE02A0089ED95 /* SoundContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundContract.swift; sourceTree = "<group>"; };
+		E09EF9062A8CE02A0089ED95 /* SoundPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPresenter.swift; sourceTree = "<group>"; };
+		E09EF9072A8CE02A0089ED95 /* SoundRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundRouter.swift; sourceTree = "<group>"; };
+		E09EF9092A8CE02A0089ED95 /* SoundInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundInteractor.swift; sourceTree = "<group>"; };
+		E09EF9152A8CE8880089ED95 /* TakeMedicineContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedicineContract.swift; sourceTree = "<group>"; };
+		E09EF9162A8CE8880089ED95 /* TakeMedicinePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedicinePresenter.swift; sourceTree = "<group>"; };
+		E09EF9172A8CE8880089ED95 /* TakeMedicineRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedicineRouter.swift; sourceTree = "<group>"; };
+		E09EF9192A8CE8880089ED95 /* TakeMedicineInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeMedicineInteractor.swift; sourceTree = "<group>"; };
+		E09EF9242A8CEF8A0089ED95 /* TabBarContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarContract.swift; sourceTree = "<group>"; };
+		E09EF9252A8CEF8A0089ED95 /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		E09EF9262A8CEF8A0089ED95 /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		E09EF9282A8CEF8A0089ED95 /* TabBarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarInteractor.swift; sourceTree = "<group>"; };
+		E09EF92E2A8CF3AF0089ED95 /* SideMenuContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuContract.swift; sourceTree = "<group>"; };
+		E09EF92F2A8CF3AF0089ED95 /* SideMenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuPresenter.swift; sourceTree = "<group>"; };
+		E09EF9302A8CF3AF0089ED95 /* SideMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuRouter.swift; sourceTree = "<group>"; };
+		E09EF9312A8CF3AF0089ED95 /* SideMenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuInteractor.swift; sourceTree = "<group>"; };
 		E0AC748C2A78D3CE00896E1A /* SoundVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundVC.swift; sourceTree = "<group>"; };
 		E0AC74902A792D3700896E1A /* GuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideVC.swift; sourceTree = "<group>"; };
 		E0B7BAF52A77B4CF0051C398 /* FirstDoseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDoseCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -176,6 +264,10 @@
 			isa = PBXGroup;
 			children = (
 				E0FA77C42A724BB7004EADEC /* TabBarVC.swift */,
+				E09EF9242A8CEF8A0089ED95 /* TabBarContract.swift */,
+				E09EF9252A8CEF8A0089ED95 /* TabBarPresenter.swift */,
+				E09EF9262A8CEF8A0089ED95 /* TabBarRouter.swift */,
+				E09EF9282A8CEF8A0089ED95 /* TabBarInteractor.swift */,
 			);
 			path = TabBarVC;
 			sourceTree = "<group>";
@@ -183,8 +275,11 @@
 		E04FE7B02A7E2F3000C85CF1 /* MedicineTypeVC */ = {
 			isa = PBXGroup;
 			children = (
-				E058EDEC2A73BA3300CAFF58 /* MedicineTypeVC.swift */,
-				E058EDF42A73C59900CAFF58 /* MedicineTypeTableViewCell */,
+				E09EF8A12A8C811B0089ED95 /* Protocol */,
+				E09EF8A32A8C812C0089ED95 /* Interactor */,
+				E09EF8A42A8C81380089ED95 /* Presenter */,
+				E09EF8A22A8C81230089ED95 /* Router */,
+				E09EF8A02A8C81150089ED95 /* View */,
 			);
 			path = MedicineTypeVC;
 			sourceTree = "<group>";
@@ -192,7 +287,11 @@
 		E04FE7B12A7E2F5D00C85CF1 /* MedicineStrengthVC */ = {
 			isa = PBXGroup;
 			children = (
-				E03E258C2A73DEBF00A628D9 /* MedicineStrengthVC.swift */,
+				E09EF8B02A8C92E60089ED95 /* Protocol */,
+				E09EF8B32A8C92FB0089ED95 /* Interactor */,
+				E09EF8B12A8C92ED0089ED95 /* Presenter */,
+				E09EF8B22A8C92F50089ED95 /* Router */,
+				E09EF8AF2A8C92E00089ED95 /* View */,
 			);
 			path = MedicineStrengthVC;
 			sourceTree = "<group>";
@@ -200,7 +299,11 @@
 		E04FE7B22A7E2F8000C85CF1 /* MedicinePurposeVC */ = {
 			isa = PBXGroup;
 			children = (
-				E0842E372A7766AC002961B0 /* MedicinePurposeVC.swift */,
+				E09EF8BF2A8C9E690089ED95 /* Protocol */,
+				E09EF8C22A8C9E800089ED95 /* Interactor */,
+				E09EF8C02A8C9E700089ED95 /* Presenter */,
+				E09EF8C12A8C9E770089ED95 /* Router */,
+				E09EF8BE2A8C9E630089ED95 /* View */,
 			);
 			path = MedicinePurposeVC;
 			sourceTree = "<group>";
@@ -208,7 +311,11 @@
 		E04FE7B32A7E2F9500C85CF1 /* MonthlySchedulVC */ = {
 			isa = PBXGroup;
 			children = (
-				E0842E3E2A779255002961B0 /* MonthlySchedulVC.swift */,
+				E09EF8CE2A8CAB280089ED95 /* Protocol */,
+				E09EF8D12A8CAB450089ED95 /* Interactor */,
+				E09EF8CF2A8CAB330089ED95 /* Presenter */,
+				E09EF8D02A8CAB3E0089ED95 /* Router */,
+				E09EF8CD2A8CAAE50089ED95 /* View */,
 			);
 			path = MonthlySchedulVC;
 			sourceTree = "<group>";
@@ -216,7 +323,11 @@
 		E04FE7B42A7E2FAD00C85CF1 /* WeeklyScheduleViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E0842E402A77ABDA002961B0 /* WeeklyScheduleViewController.swift */,
+				E09EF8E32A8CC30E0089ED95 /* Protocol */,
+				E09EF8E62A8CC3250089ED95 /* Interactor */,
+				E09EF8E42A8CC3170089ED95 /* Presenter */,
+				E09EF8E52A8CC31D0089ED95 /* Router */,
+				E09EF8E22A8CC3050089ED95 /* View */,
 			);
 			path = WeeklyScheduleViewController;
 			sourceTree = "<group>";
@@ -224,8 +335,11 @@
 		E04FE7B52A7E2FBC00C85CF1 /* FirstDoseVC */ = {
 			isa = PBXGroup;
 			children = (
-				E0842E422A77B1A8002961B0 /* FirstDoseVC.swift */,
-				E0842E482A77B339002961B0 /* FirstDoseCollectionViewCell */,
+				E09EF8F22A8CC9C30089ED95 /* Protocol */,
+				E09EF8F52A8CC9DA0089ED95 /* Interactor */,
+				E09EF8F32A8CC9CB0089ED95 /* Presenter */,
+				E09EF8F42A8CC9D40089ED95 /* Router */,
+				E09EF8F12A8CC9BE0089ED95 /* View */,
 			);
 			path = FirstDoseVC;
 			sourceTree = "<group>";
@@ -233,7 +347,11 @@
 		E04FE7B62A7E2FCB00C85CF1 /* SetTimerVC */ = {
 			isa = PBXGroup;
 			children = (
-				E0651DAD2A77BA5800BD7149 /* SetTimerVC.swift */,
+				E09EF9012A8CD2360089ED95 /* Protocol */,
+				E09EF9042A8CD24C0089ED95 /* Interactor */,
+				E09EF9022A8CD23D0089ED95 /* Presenter */,
+				E09EF9032A8CD2460089ED95 /* Router */,
+				E09EF9002A8CD22F0089ED95 /* View */,
 			);
 			path = SetTimerVC;
 			sourceTree = "<group>";
@@ -241,7 +359,11 @@
 		E04FE7B72A7E2FEC00C85CF1 /* TakeMedicineVC */ = {
 			isa = PBXGroup;
 			children = (
-				E090CE972A7B846B00DA3894 /* TakeMedicineVC.swift */,
+				E09EF9202A8CE8CF0089ED95 /* Protocol */,
+				E09EF9232A8CE8E20089ED95 /* Interactor */,
+				E09EF9212A8CE8D50089ED95 /* Presenter */,
+				E09EF9222A8CE8DC0089ED95 /* Router */,
+				E09EF91F2A8CE8CA0089ED95 /* View */,
 			);
 			path = TakeMedicineVC;
 			sourceTree = "<group>";
@@ -249,7 +371,11 @@
 		E04FE7B82A7E2FF800C85CF1 /* SoundVC */ = {
 			isa = PBXGroup;
 			children = (
-				E0AC748C2A78D3CE00896E1A /* SoundVC.swift */,
+				E09EF9102A8CE08D0089ED95 /* Protocol */,
+				E09EF9132A8CE0A10089ED95 /* Interactor */,
+				E09EF9112A8CE0950089ED95 /* Presenter */,
+				E09EF9122A8CE09C0089ED95 /* Router */,
+				E09EF90F2A8CE0880089ED95 /* View */,
 			);
 			path = SoundVC;
 			sourceTree = "<group>";
@@ -503,8 +629,11 @@
 		E095BF052A7A5C2D00702CDE /* SideMenuVC */ = {
 			isa = PBXGroup;
 			children = (
-				E095BEFE2A7A586D00702CDE /* SideMenuViewController.swift */,
-				E095BF042A7A5B7500702CDE /* SideMenuTableViewCell */,
+				E09EF93A2A8CF4740089ED95 /* Interactor */,
+				E09EF9392A8CF46D0089ED95 /* Router */,
+				E09EF9382A8CF4650089ED95 /* Presenter */,
+				E09EF9372A8CF45D0089ED95 /* Protocol */,
+				E09EF9362A8CF4570089ED95 /* View */,
 			);
 			path = SideMenuVC;
 			sourceTree = "<group>";
@@ -519,6 +648,409 @@
 				E092D6ED2A7CCD4000419C34 /* AppConstant.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E09EF8A02A8C81150089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E058EDEC2A73BA3300CAFF58 /* MedicineTypeVC.swift */,
+				E058EDF42A73C59900CAFF58 /* MedicineTypeTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E09EF8A12A8C811B0089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8962A8C80D70089ED95 /* MedicineTypeContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF8A22A8C81230089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8982A8C80D70089ED95 /* MedicineTypeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E09EF8A32A8C812C0089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF89A2A8C80D70089ED95 /* MedicineTypeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E09EF8A42A8C81380089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8972A8C80D70089ED95 /* MedicineTypePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF8AF2A8C92E00089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E03E258C2A73DEBF00A628D9 /* MedicineStrengthVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E09EF8B02A8C92E60089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8A52A8C92790089ED95 /* MedicineStrengthContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF8B12A8C92ED0089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8A62A8C92790089ED95 /* MedicineStrengthPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF8B22A8C92F50089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8A72A8C92790089ED95 /* MedicineStrengthRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E09EF8B32A8C92FB0089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8A92A8C92790089ED95 /* MedicineStrengthInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E09EF8BE2A8C9E630089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0842E372A7766AC002961B0 /* MedicinePurposeVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E09EF8BF2A8C9E690089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8B42A8C9D960089ED95 /* MedicinePurposeContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF8C02A8C9E700089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8B52A8C9D960089ED95 /* MedicinePurposePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF8C12A8C9E770089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8B62A8C9D960089ED95 /* MedicinePurposeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E09EF8C22A8C9E800089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8B82A8C9D960089ED95 /* MedicinePurposeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E09EF8CD2A8CAAE50089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0842E3E2A779255002961B0 /* MonthlySchedulVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E09EF8CE2A8CAB280089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8C32A8CAA890089ED95 /* MonthlySchedulContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF8CF2A8CAB330089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8C42A8CAA890089ED95 /* MonthlySchedulPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF8D02A8CAB3E0089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8C52A8CAA890089ED95 /* MonthlySchedulRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E09EF8D12A8CAB450089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8C72A8CAA890089ED95 /* MonthlySchedulInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E09EF8E22A8CC3050089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0842E402A77ABDA002961B0 /* WeeklyScheduleViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E09EF8E32A8CC30E0089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8DA2A8CC2360089ED95 /* WeeklyScheduleContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF8E42A8CC3170089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8DB2A8CC2360089ED95 /* WeeklySchedulePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF8E52A8CC31D0089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8DC2A8CC2360089ED95 /* WeeklyScheduleRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E09EF8E62A8CC3250089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8DD2A8CC2360089ED95 /* WeeklyScheduleInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E09EF8F12A8CC9BE0089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0842E422A77B1A8002961B0 /* FirstDoseVC.swift */,
+				E0842E482A77B339002961B0 /* FirstDoseCollectionViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E09EF8F22A8CC9C30089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8E72A8CC9520089ED95 /* FirstDoseContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF8F32A8CC9CB0089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8E82A8CC9520089ED95 /* FirstDosePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF8F42A8CC9D40089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8E92A8CC9520089ED95 /* FirstDoseRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E09EF8F52A8CC9DA0089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8EB2A8CC9520089ED95 /* FirstDoseInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E09EF9002A8CD22F0089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0651DAD2A77BA5800BD7149 /* SetTimerVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E09EF9012A8CD2360089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8F62A8CD1B40089ED95 /* SetTimerContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF9022A8CD23D0089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8F72A8CD1B40089ED95 /* SetTimerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF9032A8CD2460089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8F82A8CD1B40089ED95 /* SetTimerRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E09EF9042A8CD24C0089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF8FA2A8CD1B40089ED95 /* SetTimerInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E09EF90F2A8CE0880089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0AC748C2A78D3CE00896E1A /* SoundVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E09EF9102A8CE08D0089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9052A8CE02A0089ED95 /* SoundContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF9112A8CE0950089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9062A8CE02A0089ED95 /* SoundPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF9122A8CE09C0089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9072A8CE02A0089ED95 /* SoundRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E09EF9132A8CE0A10089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9092A8CE02A0089ED95 /* SoundInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E09EF91F2A8CE8CA0089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E090CE972A7B846B00DA3894 /* TakeMedicineVC.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E09EF9202A8CE8CF0089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9152A8CE8880089ED95 /* TakeMedicineContract.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF9212A8CE8D50089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9162A8CE8880089ED95 /* TakeMedicinePresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF9222A8CE8DC0089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9172A8CE8880089ED95 /* TakeMedicineRouter.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		E09EF9232A8CE8E20089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9192A8CE8880089ED95 /* TakeMedicineInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		E09EF9362A8CF4570089ED95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E095BEFE2A7A586D00702CDE /* SideMenuViewController.swift */,
+				E095BF042A7A5B7500702CDE /* SideMenuTableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E09EF9372A8CF45D0089ED95 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF92E2A8CF3AF0089ED95 /* SideMenuContract.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		E09EF9382A8CF4650089ED95 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF92F2A8CF3AF0089ED95 /* SideMenuPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E09EF9392A8CF46D0089ED95 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9302A8CF3AF0089ED95 /* SideMenuRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E09EF93A2A8CF4740089ED95 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E09EF9312A8CF3AF0089ED95 /* SideMenuInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		E0AC748E2A792C2600896E1A /* AddMedicationVC */ = {
@@ -774,29 +1306,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E09EF9292A8CEF8A0089ED95 /* TabBarContract.swift in Sources */,
 				E095BEF92A7A09AD00702CDE /* GuideTableViewCell.swift in Sources */,
+				E09EF92D2A8CEF8A0089ED95 /* TabBarInteractor.swift in Sources */,
+				E09EF8EE2A8CC9520089ED95 /* FirstDoseRouter.swift in Sources */,
 				E078D5892A8B793600904D42 /* MedicationPresenter.swift in Sources */,
 				E058EDEF2A73C1F700CAFF58 /* Model.swift in Sources */,
+				E09EF90C2A8CE02A0089ED95 /* SoundRouter.swift in Sources */,
+				E09EF8C82A8CAA890089ED95 /* MonthlySchedulContract.swift in Sources */,
+				E09EF8AA2A8C92790089ED95 /* MedicineStrengthContract.swift in Sources */,
+				E09EF92A2A8CEF8A0089ED95 /* TabBarPresenter.swift in Sources */,
 				E0842E3B2A7773A5002961B0 /* MedicineNameTableViewCell.swift in Sources */,
 				E078D5752A8B34A200904D42 /* HomePresenter.swift in Sources */,
 				E078D59A2A8B7E9400904D42 /* GuideRouter.swift in Sources */,
+				E09EF90A2A8CE02A0089ED95 /* SoundContract.swift in Sources */,
 				E078D5AB2A8B8AE600904D42 /* AddMedicationInteractor.swift in Sources */,
 				E078D58C2A8B793600904D42 /* MedicationInteractor.swift in Sources */,
 				E058EDED2A73BA3300CAFF58 /* MedicineTypeVC.swift in Sources */,
+				E09EF91E2A8CE8880089ED95 /* TakeMedicineInteractor.swift in Sources */,
 				E0651DAE2A77BA5800BD7149 /* SetTimerVC.swift in Sources */,
 				E0FA77C82A7252FA004EADEC /* HomeVC.swift in Sources */,
 				E0842E382A7766AC002961B0 /* MedicinePurposeVC.swift in Sources */,
+				E09EF8FC2A8CD1B40089ED95 /* SetTimerPresenter.swift in Sources */,
+				E09EF8DF2A8CC2360089ED95 /* WeeklySchedulePresenter.swift in Sources */,
+				E09EF8BA2A8C9D960089ED95 /* MedicinePurposePresenter.swift in Sources */,
 				E090CE982A7B846B00DA3894 /* TakeMedicineVC.swift in Sources */,
 				E058EDF22A73C58400CAFF58 /* MedicineTypeTableViewCell.swift in Sources */,
+				E09EF8AC2A8C92790089ED95 /* MedicineStrengthRouter.swift in Sources */,
+				E09EF8FB2A8CD1B40089ED95 /* SetTimerContract.swift in Sources */,
+				E09EF89C2A8C80D70089ED95 /* MedicineTypePresenter.swift in Sources */,
 				E058EDE72A73913300CAFF58 /* AddMedicationVC.swift in Sources */,
 				E0842E3F2A779255002961B0 /* MonthlySchedulVC.swift in Sources */,
 				E0D5CF1F2A81F816006A610E /* LangugeManager.swift in Sources */,
+				E09EF8DE2A8CC2360089ED95 /* WeeklyScheduleContract.swift in Sources */,
+				E09EF8AB2A8C92790089ED95 /* MedicineStrengthPresenter.swift in Sources */,
 				E078D5882A8B793600904D42 /* MedicationContract.swift in Sources */,
+				E09EF92B2A8CEF8A0089ED95 /* TabBarRouter.swift in Sources */,
 				E078D5A82A8B8AE600904D42 /* AddMedicationPresenter.swift in Sources */,
+				E09EF8EC2A8CC9520089ED95 /* FirstDoseContract.swift in Sources */,
 				E078D59C2A8B7E9400904D42 /* GuideInteractor.swift in Sources */,
+				E09EF8CC2A8CAA890089ED95 /* MonthlySchedulInteractor.swift in Sources */,
 				E078D58A2A8B793600904D42 /* MedicationRouter.swift in Sources */,
 				E078D5742A8B34A200904D42 /* HomeContract.swift in Sources */,
 				E078D5A72A8B8AE600904D42 /* AddMedicationContract.swift in Sources */,
+				E09EF89B2A8C80D70089ED95 /* MedicineTypeContract.swift in Sources */,
 				E095BF022A7A5B6200702CDE /* SideMenuTableViewCell.swift in Sources */,
 				E0B7BAF72A77B4CF0051C398 /* FirstDoseCollectionViewCell.swift in Sources */,
 				E078D5A92A8B8AE600904D42 /* AddMedicationRouter.swift in Sources */,
@@ -805,19 +1358,42 @@
 				E095BEFD2A7A11F800702CDE /* GuideModel.swift in Sources */,
 				E058EDDD2A7376AA00CAFF58 /* MedicationVC.swift in Sources */,
 				E0FA77C52A724BB7004EADEC /* TabBarVC.swift in Sources */,
+				E09EF9332A8CF3AF0089ED95 /* SideMenuPresenter.swift in Sources */,
+				E09EF8BD2A8C9D960089ED95 /* MedicinePurposeInteractor.swift in Sources */,
+				E09EF89D2A8C80D70089ED95 /* MedicineTypeRouter.swift in Sources */,
 				E0FA77CF2A726B27004EADEC /* MedicineDetalisTableViewCell.swift in Sources */,
 				E078D5762A8B34A200904D42 /* HomeRouter.swift in Sources */,
+				E09EF8B92A8C9D960089ED95 /* MedicinePurposeContract.swift in Sources */,
+				E09EF9342A8CF3AF0089ED95 /* SideMenuRouter.swift in Sources */,
 				E095BEFF2A7A586D00702CDE /* SideMenuViewController.swift in Sources */,
 				E0FA77AE2A7244E2004EADEC /* AppDelegate.swift in Sources */,
 				E0AC74912A792D3700896E1A /* GuideVC.swift in Sources */,
+				E09EF9322A8CF3AF0089ED95 /* SideMenuContract.swift in Sources */,
+				E09EF8ED2A8CC9520089ED95 /* FirstDosePresenter.swift in Sources */,
+				E09EF89F2A8C80D70089ED95 /* MedicineTypeInteractor.swift in Sources */,
 				E0842E412A77ABDA002961B0 /* WeeklyScheduleViewController.swift in Sources */,
+				E09EF8F02A8CC9520089ED95 /* FirstDoseInteractor.swift in Sources */,
 				E095BF072A7A5C5600702CDE /* SideMenu.swift in Sources */,
 				E0FA77CC2A726824004EADEC /* HeaderView.swift in Sources */,
+				E09EF91C2A8CE8880089ED95 /* TakeMedicineRouter.swift in Sources */,
+				E09EF90B2A8CE02A0089ED95 /* SoundPresenter.swift in Sources */,
 				E078D5982A8B7E9400904D42 /* GuideContract.swift in Sources */,
+				E09EF8E12A8CC2360089ED95 /* WeeklyScheduleInteractor.swift in Sources */,
 				E0651DB52A77D2CB00BD7149 /* Database.swift in Sources */,
+				E09EF91B2A8CE8880089ED95 /* TakeMedicinePresenter.swift in Sources */,
+				E09EF8E02A8CC2360089ED95 /* WeeklyScheduleRouter.swift in Sources */,
 				E078D5822A8B462900904D42 /* RealmModel.swift in Sources */,
+				E09EF8FF2A8CD1B40089ED95 /* SetTimerInteractor.swift in Sources */,
+				E09EF90E2A8CE02A0089ED95 /* SoundInteractor.swift in Sources */,
+				E09EF8BB2A8C9D960089ED95 /* MedicinePurposeRouter.swift in Sources */,
 				E0AC748D2A78D3CE00896E1A /* SoundVC.swift in Sources */,
+				E09EF91A2A8CE8880089ED95 /* TakeMedicineContract.swift in Sources */,
+				E09EF8CA2A8CAA890089ED95 /* MonthlySchedulRouter.swift in Sources */,
+				E09EF8FD2A8CD1B40089ED95 /* SetTimerRouter.swift in Sources */,
+				E09EF8C92A8CAA890089ED95 /* MonthlySchedulPresenter.swift in Sources */,
 				E03E258D2A73DEBF00A628D9 /* MedicineStrengthVC.swift in Sources */,
+				E09EF9352A8CF3AF0089ED95 /* SideMenuInteractor.swift in Sources */,
+				E09EF8AE2A8C92790089ED95 /* MedicineStrengthInteractor.swift in Sources */,
 				E092D6EE2A7CCD4000419C34 /* AppConstant.swift in Sources */,
 				E078D5782A8B34A200904D42 /* HomeInteractor.swift in Sources */,
 			);
