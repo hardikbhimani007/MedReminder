@@ -24,7 +24,7 @@ class TakeMedicinePresenter: ViewToPresenterTakeMedicineProtocol {
         interactor?.setUpLocalNotification(med1: med1, medName: medName, medType: medType, firstDose: firstDose, medNameLbl: medNameLbl, medTypeLbl: medTypeLbl, schedulLbl: schedulLbl, timeLbl: timeLbl, hr: hr, min: min)
     }
     
-    func deleteDataFromDatabase(index: Int) {
+    func deleteDataFromDatabase(index: Int?) {
         interactor?.deleteData(index: index)
     }
     

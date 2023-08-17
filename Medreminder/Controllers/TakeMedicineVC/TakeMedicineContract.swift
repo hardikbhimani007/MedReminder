@@ -24,7 +24,7 @@ protocol ViewToPresenterTakeMedicineProtocol {
     var router: PresenterToRouterTakeMedicineProtocol? { get set }
     func showToVC(index: Int?, navigationController: UINavigationController)
     func localNotification(med1: String, medName: String, medType: String, firstDose: String, medNameLbl: UILabel, medTypeLbl: UILabel, schedulLbl: UILabel, timeLbl: UILabel, hr: Int, min: Int)
-    func deleteDataFromDatabase(index: Int)
+    func deleteDataFromDatabase(index: Int?)
     func showRootView()
 }
 
@@ -34,7 +34,7 @@ protocol PresenterToInteractorTakeMedicineProtocol {
     
     var presenter: InteractorToPresenterTakeMedicineProtocol? { get set }
     func setUpLocalNotification(med1: String, medName: String, medType: String, firstDose: String, medNameLbl: UILabel, medTypeLbl: UILabel, schedulLbl: UILabel, timeLbl: UILabel, hr: Int, min: Int)
-    func deleteData(index: Int)
+    func deleteData(index: Int?)
 }
 
 

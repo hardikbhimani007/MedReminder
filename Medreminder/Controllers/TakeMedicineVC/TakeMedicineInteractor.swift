@@ -33,12 +33,4 @@ class TakeMedicineInteractor: PresenterToInteractorTakeMedicineProtocol {
         let formatedTime = String(format: "%02d:%02d %@", hr, min, ampm)
         timeLbl.text = formatedTime
     }
-    
-    func deleteData(index: Int) {
-        let realm = try! Realm()
-        let deleteData = realm.objects(MedicineDetalis.self)[index ?? 0]
-        try! realm.write({
-            realm.delete(deleteData)
-        })
-    }
 }

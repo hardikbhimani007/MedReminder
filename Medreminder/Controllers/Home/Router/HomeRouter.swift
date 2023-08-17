@@ -24,7 +24,7 @@ class HomeRouter: PresenterToRouterHomeProtocol {
     }
     
     func showAlert(names: String ,tableView: UITableView, vc: HomeVC) {
-        var name = names
+        var name = names;
         let alert = UIAlertController(title: "\(localized(key: "Set Name"))", message: "\(localized(key: "Enter your name"))", preferredStyle: .alert)
         alert.addTextField { (txtField) in
             txtField.placeholder = "\(localized(key: "Enter your name"))"
