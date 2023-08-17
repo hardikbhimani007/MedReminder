@@ -668,6 +668,19 @@
                                             <constraint firstAttribute="height" constant="200" id="6fm-br-KtC"/>
                                         </constraints>
                                     </pickerView>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTz-JM-mMQ">
+                                        <rect key="frame" x="142.5" y="701" width="129" height="45"/>
+                                        <color key="backgroundColor" red="0.38431372549999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ERT-hc-wZg"/>
+                                            <constraint firstAttribute="width" constant="129" id="yHx-DI-wM4"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Update">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="24"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.047058823530000002" green="0.074509803920000006" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -685,9 +698,11 @@
                                     <constraint firstItem="Q7j-YN-upV" firstAttribute="centerX" secondItem="5BA-Jj-NfN" secondAttribute="centerX" id="Vyv-O7-Dzc"/>
                                     <constraint firstItem="DSN-Y8-e0R" firstAttribute="centerX" secondItem="5BA-Jj-NfN" secondAttribute="centerX" id="YTH-TW-ycL"/>
                                     <constraint firstItem="NaB-3P-PR7" firstAttribute="top" secondItem="Pv1-OT-eiW" secondAttribute="bottom" constant="32" id="eOV-Hr-EQ8"/>
+                                    <constraint firstAttribute="bottom" secondItem="sTz-JM-mMQ" secondAttribute="bottom" constant="150" id="h5j-cV-6gw"/>
                                     <constraint firstItem="QNw-Wn-f4I" firstAttribute="leading" secondItem="5BA-Jj-NfN" secondAttribute="leading" constant="30" id="h8C-fI-1F9"/>
                                     <constraint firstItem="Q7j-YN-upV" firstAttribute="top" secondItem="yRN-F2-upr" secondAttribute="bottom" constant="46" id="hox-Zx-WFp"/>
                                     <constraint firstItem="Pv1-OT-eiW" firstAttribute="leading" secondItem="5BA-Jj-NfN" secondAttribute="leading" constant="22" id="i3L-h1-fAE"/>
+                                    <constraint firstItem="sTz-JM-mMQ" firstAttribute="centerX" secondItem="5BA-Jj-NfN" secondAttribute="centerX" id="kEu-Li-k2J"/>
                                     <constraint firstItem="yRN-F2-upr" firstAttribute="top" secondItem="5BA-Jj-NfN" secondAttribute="top" constant="48" id="wwG-Jh-XFc"/>
                                     <constraint firstItem="7nH-sw-j1C" firstAttribute="top" secondItem="QNw-Wn-f4I" secondAttribute="bottom" constant="43" id="yVN-Op-WSg"/>
                                 </constraints>
@@ -712,6 +727,7 @@
                         <outlet property="secLbl" destination="KCB-mQ-0FS" id="Ttc-39-HfT"/>
                         <outlet property="setTimeLbl" destination="Q7j-YN-upV" id="KwZ-32-MKi"/>
                         <outlet property="timePicker" destination="NaB-3P-PR7" id="gEl-gx-J6p"/>
+                        <outlet property="updateBtn" destination="sTz-JM-mMQ" id="i1i-Ut-btW"/>
                         <outlet property="volumeBtn" destination="VQW-fH-vPg" id="znc-K9-zfe"/>
                     </connections>
                 </viewController>
