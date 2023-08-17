@@ -182,14 +182,50 @@
         <!--PROFILE-->
         <scene sceneID="qB4-5W-4Oo">
             <objects>
-                <viewController id="lWC-7y-RAX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="lWC-7y-RAX" customClass="ProfileViewController" customModule="Medreminder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Bi-8h-PIV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJA-rW-uol">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loupe" translatesAutoresizingMaskIntoConstraints="NO" id="DKp-he-q40">
+                                        <rect key="frame" x="157" y="297" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="LFn-bb-sNp"/>
+                                            <constraint firstAttribute="height" constant="100" id="qJ3-FD-2D0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Page Not Found" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCR-BV-J1E">
+                                        <rect key="frame" x="84" y="427" width="246" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="b3R-k2-jEb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="35"/>
+                                        <color key="textColor" red="0.38431372549019605" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please return to the homepage." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVJ-73-DZo">
+                                        <rect key="frame" x="29.5" y="477" width="355" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="fQo-mX-zjd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.047058823530000002" green="0.074509803920000006" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="mVJ-73-DZo" firstAttribute="top" secondItem="OCR-BV-J1E" secondAttribute="bottom" constant="8" id="5ps-2k-qGO"/>
+                                    <constraint firstItem="OCR-BV-J1E" firstAttribute="centerY" secondItem="CJA-rW-uol" secondAttribute="centerY" id="7Qf-Qh-CXV"/>
+                                    <constraint firstItem="OCR-BV-J1E" firstAttribute="centerX" secondItem="CJA-rW-uol" secondAttribute="centerX" id="OTZ-nR-wGz"/>
+                                    <constraint firstItem="OCR-BV-J1E" firstAttribute="top" secondItem="DKp-he-q40" secondAttribute="bottom" constant="30" id="fIj-pi-eTO"/>
+                                    <constraint firstAttribute="trailing" secondItem="mVJ-73-DZo" secondAttribute="trailing" constant="29.5" id="oLs-Ms-hLP"/>
+                                    <constraint firstItem="mVJ-73-DZo" firstAttribute="leading" secondItem="CJA-rW-uol" secondAttribute="leading" constant="29.5" id="ogX-Z3-Xxk"/>
+                                    <constraint firstItem="DKp-he-q40" firstAttribute="centerX" secondItem="CJA-rW-uol" secondAttribute="centerX" id="yoB-Gs-7HM"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vpm-Ln-y6s"/>
@@ -202,10 +238,15 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="PROFILE" image="Profile" id="kjQ-bc-BfU"/>
+                    <connections>
+                        <outlet property="dataNotFoundImg" destination="DKp-he-q40" id="WJL-nz-h8C"/>
+                        <outlet property="notesLbl" destination="mVJ-73-DZo" id="81z-ZW-v6D"/>
+                        <outlet property="pageNotFoundLbl" destination="OCR-BV-J1E" id="oEA-Mj-4Ri"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0w-Qy-Fsz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="538"/>
+            <point key="canvasLocation" x="1053.6231884057972" y="537.05357142857144"/>
         </scene>
         <!--SEARCH-->
         <scene sceneID="a6I-F8-kTY">
@@ -874,6 +915,7 @@
         <image name="Search" width="17.5" height="17.5"/>
         <image name="Volume-Down" width="24" height="24"/>
         <image name="arrow-left" width="36" height="36"/>
+        <image name="loupe" width="512" height="512"/>
         <image name="medicine" width="24" height="24"/>
         <image name="medicine (2)" width="64" height="64"/>
         <image name="trash" width="24" height="24"/>

@@ -44,4 +44,11 @@ class MonthlySchedulInteractor: PresenterToInteractorMonthlySchedulProtocol {
         }
          return cell
     }
+    
+    func setTittleAndBtn(questionLbl: UILabel, nextBtn: UIButton, tableView: UITableView) {
+        questionLbl.text = "\(localized(key: "How often do you take this medicine?"))"
+        let tittle = NSMutableAttributedString(string: "\(localized(key: "Next"))", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .semibold)])
+        nextBtn.setAttributedTitle(tittle, for: .normal)
+        tableView.reloadData()
+    }
 }

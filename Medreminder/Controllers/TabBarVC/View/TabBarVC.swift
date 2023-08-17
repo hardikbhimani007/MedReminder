@@ -14,9 +14,9 @@ class TabBarVC: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TabBarRouter.createModule(vc: self)
         navigationController?.navigationBar.isHidden = true
-        tabBar.tintColor = .white
-        tabBar.unselectedItemTintColor = .cyan
+        presenter?.showTabBar(tabBar: tabBar)
     }
 }
 extension TabBarVC: PresenterToViewTabBarProtocol{

@@ -31,6 +31,10 @@ class TakeMedicinePresenter: ViewToPresenterTakeMedicineProtocol {
     func showRootView() {
         router?.setRootView()
     }
+    
+    func showButtonAndView(takeView: UIView, takeBtn: UIButton, editBtn: UIButton) {
+        interactor?.setButtonAndView(takeView: takeView, takeBtn: takeBtn, editBtn: editBtn)
+    }
 }
 
 extension TakeMedicinePresenter: InteractorToPresenterTakeMedicineProtocol {

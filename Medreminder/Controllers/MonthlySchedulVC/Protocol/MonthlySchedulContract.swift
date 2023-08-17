@@ -27,6 +27,7 @@ protocol ViewToPresenterMonthlySchedulProtocol {
     func showToVC(medicineLabel: UILabel, navigationController: UINavigationController)
     func setVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
     func cellForRowAt(tableView: UITableView, arrSchedule: [MedicineSchedul], selectedIndex: Int, nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell
+    func showTittleAndBtn(questionLbl: UILabel, nextBtn: UIButton, tableView: UITableView)
 }
 
 
@@ -37,6 +38,7 @@ protocol PresenterToInteractorMonthlySchedulProtocol {
     func registerNib(tableView: UITableView, nibName: String, forCellReuseIdentifier: String)
     func loadDataInView()
     func cellFor(tableView: UITableView, arrSchedule: [MedicineSchedul], selectedIndex: Int, nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell
+    func setTittleAndBtn(questionLbl: UILabel, nextBtn: UIButton, tableView: UITableView)
 }
 
 

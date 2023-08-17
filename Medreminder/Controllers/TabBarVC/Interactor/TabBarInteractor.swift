@@ -7,9 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 class TabBarInteractor: PresenterToInteractorTabBarProtocol {
 
     // MARK: Properties
     var presenter: InteractorToPresenterTabBarProtocol?
+    
+    func tabBarSet(tabBar: UITabBar) {
+        tabBar.tintColor = .white
+        tabBar.unselectedItemTintColor = .cyan
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class TabBarPresenter: ViewToPresenterTabBarProtocol {
 
@@ -14,6 +15,10 @@ class TabBarPresenter: ViewToPresenterTabBarProtocol {
     var view: PresenterToViewTabBarProtocol?
     var interactor: PresenterToInteractorTabBarProtocol?
     var router: PresenterToRouterTabBarProtocol?
+    
+    func showTabBar(tabBar: UITabBar) {
+        interactor?.tabBarSet(tabBar: tabBar)
+    }
 }
 
 extension TabBarPresenter: InteractorToPresenterTabBarProtocol {

@@ -18,6 +18,9 @@
 "Enter your name" = "अपना नाम दर्ज करें";
 "Ok" = "ठीक है";
 
+"Page Not Found" = "पृष्ठ नहीं मिला";
+"Please return to the homepage." = "कृपया होमपेज पर वापस जाएं।";
+
 "What medicine do you want to add?" = "आप कौनसी दवा जोड़ना चाहेंगे?";
 "Type of choose your med from the list" = "सूची से अपनी दवा का प्रकार चुनें";
 "Next" = "आगामी";

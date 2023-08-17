@@ -26,6 +26,7 @@ protocol ViewToPresenterTakeMedicineProtocol {
     func localNotification(med1: String, medName: String, medType: String, firstDose: String, medNameLbl: UILabel, medTypeLbl: UILabel, schedulLbl: UILabel, timeLbl: UILabel, hr: Int, min: Int)
     func deleteDataFromDatabase(index: Int?)
     func showRootView()
+    func showButtonAndView(takeView: UIView, takeBtn: UIButton, editBtn: UIButton)
 }
 
 
@@ -35,6 +36,7 @@ protocol PresenterToInteractorTakeMedicineProtocol {
     var presenter: InteractorToPresenterTakeMedicineProtocol? { get set }
     func setUpLocalNotification(med1: String, medName: String, medType: String, firstDose: String, medNameLbl: UILabel, medTypeLbl: UILabel, schedulLbl: UILabel, timeLbl: UILabel, hr: Int, min: Int)
     func deleteData(index: Int?)
+    func setButtonAndView(takeView: UIView, takeBtn: UIButton, editBtn: UIButton)
 }
 
 

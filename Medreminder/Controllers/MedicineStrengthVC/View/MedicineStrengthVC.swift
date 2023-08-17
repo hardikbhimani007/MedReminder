@@ -29,6 +29,7 @@ class MedicineStrengthVC: UIViewController {
         super.viewDidLoad()
         MedicineStrengthRouter.createModule(vc: self)
         getDataFrom()
+        hideKeyBoardWhenTappedAround()
         presenter?.showTxtFieldAndBtn(txtField: txtFieldStrngth, nextBtn: nextBtn)
         presenter?.showRegisterNib(tableView: tableViewStrength, nibName: "MedicineTypeTableViewCell", forCellReuseIdentifier: "MedicineTypeTableViewCell")
         txtFieldStrngth.addTarget(self, action: #selector(textViewDidChange(_:)), for: UIControl.Event.editingChanged)
@@ -44,6 +45,16 @@ class MedicineStrengthVC: UIViewController {
         presenter?.tittleLblAndBtn(noteLbl: noteLbl, tittleLbl: titleLbl, nextBtn: nextBtn, tableView: tableViewStrength)
     }
     //MARK: - Functions
+    func hideKeyBoardWhenTappedAround() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(MedicineStrengthVC.hideKeyBoard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
+    }
+
+    @objc func hideKeyBoard() {
+        view.endEditing(true)
+    }
+    
     func getDataFrom() {
         medicineNameLbl.text = medicine.medicineName
     }

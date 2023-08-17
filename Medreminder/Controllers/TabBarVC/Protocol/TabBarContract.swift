@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 // MARK: View Output (Presenter -> View)
@@ -21,6 +22,7 @@ protocol ViewToPresenterTabBarProtocol {
     var view: PresenterToViewTabBarProtocol? { get set }
     var interactor: PresenterToInteractorTabBarProtocol? { get set }
     var router: PresenterToRouterTabBarProtocol? { get set }
+    func showTabBar(tabBar: UITabBar)
 }
 
 
@@ -28,6 +30,7 @@ protocol ViewToPresenterTabBarProtocol {
 protocol PresenterToInteractorTabBarProtocol {
     
     var presenter: InteractorToPresenterTabBarProtocol? { get set }
+    func tabBarSet(tabBar: UITabBar)
 }
 
 

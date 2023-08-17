@@ -33,4 +33,10 @@ class TakeMedicineInteractor: PresenterToInteractorTakeMedicineProtocol {
         let formatedTime = String(format: "%02d:%02d %@", hr, min, ampm)
         timeLbl.text = formatedTime
     }
+    
+    func setButtonAndView(takeView: UIView, takeBtn: UIButton, editBtn: UIButton) {
+        takeView.layer.cornerRadius = 10
+        takeBtn.layer.cornerRadius = 29
+        editBtn.layer.cornerRadius = 29
+    }
 }

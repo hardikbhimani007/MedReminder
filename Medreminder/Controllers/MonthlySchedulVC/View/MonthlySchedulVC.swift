@@ -37,10 +37,7 @@ class MonthlySchedulVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.loadedData()
-        questionLbl.text = "\(localized(key: "How often do you take this medicine?"))"
-        let tittle = NSMutableAttributedString(string: "\(localized(key: "Next"))", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 22, weight: .semibold)])
-        nextBtn.setAttributedTitle(tittle, for: .normal)
-        tableviewMonthlySchedul.reloadData()
+        presenter?.showTittleAndBtn(questionLbl: questionLbl, nextBtn: nextBtn, tableView: tableviewMonthlySchedul)
     }
     //MARK: - Functions
     func getData() {

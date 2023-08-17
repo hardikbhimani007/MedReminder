@@ -35,6 +35,10 @@ class MonthlySchedulPresenter: ViewToPresenterMonthlySchedulProtocol {
     func cellForRowAt(tableView: UITableView, arrSchedule: [MedicineSchedul], selectedIndex: Int, nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell {
         interactor?.cellFor(tableView: tableView, arrSchedule: arrSchedule, selectedIndex: selectedIndex, nextBtn: nextBtn, indexPath: indexPath) ?? UITableViewCell()
     }
+    
+    func showTittleAndBtn(questionLbl: UILabel, nextBtn: UIButton, tableView: UITableView) {
+        interactor?.setTittleAndBtn(questionLbl: questionLbl, nextBtn: nextBtn, tableView: tableView)
+    }
 }
 
 extension MonthlySchedulPresenter: InteractorToPresenterMonthlySchedulProtocol {

@@ -57,6 +57,7 @@ class MedicinePurposeInteractor: PresenterToInteractorMedicinePurposeProtocol {
             noteLbl.isHidden = true
             nextBtn.isHidden = false
             tableView.isHidden = false
+            tableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
         }
     }
     

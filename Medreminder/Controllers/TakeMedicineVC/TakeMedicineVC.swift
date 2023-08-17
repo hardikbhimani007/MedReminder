@@ -36,9 +36,7 @@ class TakeMedicineVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         TakeMedicineRouter.createModule(vc: self)
-        takeView.layer.cornerRadius = 10
-        takeBtn.layer.cornerRadius = 29
-        editBtn.layer.cornerRadius = 29
+        presenter?.showButtonAndView(takeView: takeView, takeBtn: takeBtn, editBtn: editBtn)
         presenter?.localNotification(med1: med1, medName: medName, medType: medType, firstDose: firstDose, medNameLbl: medNameLbl, medTypeLbl: medTypeLbl, schedulLbl: schedulLbl, timeLbl: timeLbl, hr: hr, min: min)
         cancelBtn.addTarget(self, action: #selector(tappedCancelBtn), for: .touchUpInside)
         editBtn.addTarget(self, action: #selector(tappedEditBtn), for: .touchUpInside)
