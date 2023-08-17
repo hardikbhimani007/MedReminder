@@ -58,20 +58,7 @@ class TakeMedicineVC: UIViewController {
     }
     
     @objc func tappedEditBtn() {
-<<<<<<< HEAD
-        print("Working on r_dev branch.")
-        print("Conflicting from master branch.")
-        let update = realm.objects(MedicineDetalis.self)[data.index ?? 0]
-        try! realm.write({
-            
-        })
-//        try! realm.write({
-//            let storyBoard = UIStoryboard(name: "AddMedication", bundle: nil).instantiateViewController(withIdentifier: "AddMedicationVC") as! AddMedicationVC
-//            self.navigationController?.pushViewController(storyBoard, animated: true)
-//        })
-=======
         presenter?.showToVC(index: index, navigationController: navigationController!)
->>>>>>> r_dev
     }
     
     @IBAction func tappedDeleteBtn(_ sender: UIButton) {
