@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Km1-ay-fNN">
-                                <rect key="frame" x="30" y="36" width="236" height="1"/>
+                                <rect key="frame" x="30" y="41" width="236" height="1"/>
                                 <color key="backgroundColor" red="0.38431372549999998" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="25K-il-ENv"/>
@@ -52,7 +52,7 @@
                             <constraint firstItem="tvY-Oc-goz" firstAttribute="leading" secondItem="TRJ-yi-Ybk" secondAttribute="trailing" constant="8" id="Q7o-H4-ecj"/>
                             <constraint firstItem="Km1-ay-fNN" firstAttribute="leading" secondItem="9MI-h4-Fo5" secondAttribute="leading" constant="30" id="Qcs-AA-pr3"/>
                             <constraint firstItem="tvY-Oc-goz" firstAttribute="centerY" secondItem="9MI-h4-Fo5" secondAttribute="centerY" id="QkE-p6-aEL"/>
-                            <constraint firstItem="Km1-ay-fNN" firstAttribute="top" secondItem="tvY-Oc-goz" secondAttribute="bottom" constant="3" id="TKF-Wl-IlI"/>
+                            <constraint firstItem="Km1-ay-fNN" firstAttribute="top" secondItem="tvY-Oc-goz" secondAttribute="bottom" constant="8" id="TKF-Wl-IlI"/>
                             <constraint firstAttribute="trailing" secondItem="tvY-Oc-goz" secondAttribute="trailing" constant="8" id="lm3-Fb-mwU"/>
                             <constraint firstAttribute="trailing" secondItem="Km1-ay-fNN" secondAttribute="trailing" constant="38" id="tKi-ux-mJa"/>
                             <constraint firstItem="TRJ-yi-Ybk" firstAttribute="centerY" secondItem="9MI-h4-Fo5" secondAttribute="centerY" id="zm3-AZ-lPB"/>

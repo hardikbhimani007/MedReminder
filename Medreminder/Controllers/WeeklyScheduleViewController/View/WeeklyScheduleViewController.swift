@@ -20,7 +20,9 @@ class WeeklyScheduleViewController: UIViewController {
     var presenter: ViewToPresenterWeeklyScheduleProtocol?
     var medicinePurpose = Medicine()
     var arrDaySchedule = [MedicineSchedul]()
-    var selectedIndex = 0
+    var arrSchedule = [MedicineSchedul]()
+    var selectedIndex: [Int] = []
+    var index: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +88,33 @@ extension WeeklyScheduleViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
+        switch index {
+        case 0: handleSection(withMaxCount: 7, indexPath: indexPath)
+        case 1: handleSection(withMaxCount: 1, indexPath: indexPath)
+        case 2: handleSection(withMaxCount: 2, indexPath: indexPath)
+        case 3: handleSection(withMaxCount: 3, indexPath: indexPath)
+        case 4: handleSection(withMaxCount: 4, indexPath: indexPath)
+        case 5: handleSection(withMaxCount: 5, indexPath: indexPath)
+        case 6: handleSection(withMaxCount: 6, indexPath: indexPath)
+        case 7: handleSection(withMaxCount: 1, indexPath: indexPath)
+        case 8: handleSection(withMaxCount: 3, indexPath: indexPath)
+        default:
+            break
+        }
         tableView.reloadData()
+    }
+    
+    func handleSection(withMaxCount maxCount: Int, indexPath: IndexPath) {
+        if selectedIndex.count < maxCount {
+            selectedIndex.append(indexPath.row)
+            nextBtn.isHidden = false
+        }  else {
+            if selectedIndex.first != nil {
+                selectedIndex.removeAll()
+            }
+            selectedIndex.append(indexPath.row)
+        }
+        nextBtn.isHidden = selectedIndex.count < maxCount
     }
 }
 

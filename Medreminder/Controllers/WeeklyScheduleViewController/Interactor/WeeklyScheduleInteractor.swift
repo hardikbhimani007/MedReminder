@@ -37,16 +37,15 @@ class WeeklyScheduleInteractor: PresenterToInteractorWeeklyScheduleProtocol {
         tableview.reloadData()
     }
     
-    func cellFor(tableView: UITableView, arrDaySchedule: [MedicineSchedul], selectedIndex: Int, nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell {
+    func cellFor(tableView: UITableView, arrDaySchedule: [MedicineSchedul], selectedIndex: [Int], nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell {
         let cell: MedicineTypeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MedicineTypeTableViewCell") as! MedicineTypeTableViewCell
         let type = arrDaySchedule[indexPath.row]
         cell.MedicineType.text = type.time
-        if selectedIndex == indexPath.row {
-            cell.selectionBtn.isSelected = true
-            nextBtn.isHidden = false
-        } else {
-            cell.selectionBtn.isSelected = false
-        }
+            if selectedIndex.contains(indexPath.row) {
+                cell.selectionBtn.isSelected = true
+            } else {
+                cell.selectionBtn.isSelected = false
+            }
          return cell
     }
 }

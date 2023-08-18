@@ -27,7 +27,7 @@ protocol ViewToPresenterWeeklyScheduleProtocol {
     func lblAndBtn(questionLbl: UILabel, nextBtn: UIButton, tableview: UITableView)
     func showToVCWithData(medicineTittle: UILabel, navigationController: UINavigationController)
     func showToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
-    func cellForRowAt(tableView: UITableView, arrDaySchedule: [MedicineSchedul], selectedIndex: Int, nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell
+    func cellForRowAt(tableView: UITableView, arrDaySchedule: [MedicineSchedul], selectedIndex: [Int], nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell
 }
 
 
@@ -38,7 +38,7 @@ protocol PresenterToInteractorWeeklyScheduleProtocol {
     func registerNib(tableView: UITableView, nibName: String, forCellReuseIdentifier: String)
     func loadData()
     func setLblAndBtn(questionLbl: UILabel, nextBtn: UIButton, tableview: UITableView)
-    func cellFor(tableView: UITableView, arrDaySchedule: [MedicineSchedul], selectedIndex: Int, nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell
+    func cellFor(tableView: UITableView, arrDaySchedule: [MedicineSchedul], selectedIndex: [Int], nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell
 }
 
 

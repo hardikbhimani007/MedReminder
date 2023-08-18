@@ -13,6 +13,7 @@ import UIKit
 // MARK: View Output (Presenter -> View)
 protocol PresenterToViewMonthlySchedulProtocol {
     func loadData(arrSchedule: [MedicineSchedul])
+    func setIndex(index: Int?)
 }
 
 
@@ -24,7 +25,7 @@ protocol ViewToPresenterMonthlySchedulProtocol {
     var router: PresenterToRouterMonthlySchedulProtocol? { get set }
     func setRegisterNib(tableView: UITableView, nibName: String, forCellReuseIdentifier: String)
     func loadedData()
-    func showToVC(medicineLabel: UILabel, navigationController: UINavigationController)
+    func showToVC(index: Int, arrSchedule: [MedicineSchedul], medicineLabel: UILabel, navigationController: UINavigationController)
     func setVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
     func cellForRowAt(tableView: UITableView, arrSchedule: [MedicineSchedul], selectedIndex: Int, nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell
     func showTittleAndBtn(questionLbl: UILabel, nextBtn: UIButton, tableView: UITableView)
@@ -45,11 +46,12 @@ protocol PresenterToInteractorMonthlySchedulProtocol {
 // MARK: Interactor Output (Interactor -> Presenter)
 protocol InteractorToPresenterMonthlySchedulProtocol {
     func loadDatasucessfully(arrSchedule: [MedicineSchedul])
+    func setIndexSuccessfully(index: Int?)
 }
 
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterMonthlySchedulProtocol {
-    func pushToVCWithData(medicineLabel: UILabel, navigationController: UINavigationController)
+    func pushToVCWithData(index: Int, arrSchedule: [MedicineSchedul], medicineLabel: UILabel, navigationController: UINavigationController)
     func pushToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
 }

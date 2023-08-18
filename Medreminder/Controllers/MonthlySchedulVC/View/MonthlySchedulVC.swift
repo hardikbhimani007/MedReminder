@@ -21,6 +21,7 @@ class MonthlySchedulVC: UIViewController {
     var medicinePurpose = Medicine()
     var arrSchedule = [MedicineSchedul]()
     var selectedIndex = 0
+    var index: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ class MonthlySchedulVC: UIViewController {
     
     //MARK: - Buttons Actions
     @objc func tappedNextBtn() {
-        presenter?.showToVC(medicineLabel: medicineTitle, navigationController: navigationController!)
+        presenter?.showToVC(index: index ?? 0, arrSchedule: arrSchedule, medicineLabel: medicineTitle, navigationController: navigationController!)
     }
     
     @objc func tappedBackBtn() {
@@ -96,5 +97,9 @@ extension MonthlySchedulVC: PresenterToViewMonthlySchedulProtocol{
     func loadData(arrSchedule: [MedicineSchedul]) {
         self.arrSchedule = arrSchedule
         self.tableviewMonthlySchedul.reloadData()
+    }
+    
+    func setIndex(index: Int?) {
+        self.index = index
     }
 }

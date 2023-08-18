@@ -42,6 +42,7 @@ class MonthlySchedulInteractor: PresenterToInteractorMonthlySchedulProtocol {
         } else {
             cell.selectionBtn.isSelected = false
         }
+        presenter?.setIndexSuccessfully(index: selectedIndex)
          return cell
     }
     

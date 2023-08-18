@@ -24,8 +24,8 @@ class MonthlySchedulPresenter: ViewToPresenterMonthlySchedulProtocol {
         interactor?.loadDataInView()
     }
     
-    func showToVC(medicineLabel: UILabel, navigationController: UINavigationController) {
-        router?.pushToVCWithData(medicineLabel: medicineLabel, navigationController: navigationController)
+    func showToVC(index: Int, arrSchedule: [MedicineSchedul], medicineLabel: UILabel, navigationController: UINavigationController) {
+        router?.pushToVCWithData(index: index, arrSchedule: arrSchedule, medicineLabel: medicineLabel, navigationController: navigationController)
     }
     
     func setVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController) {
@@ -44,5 +44,9 @@ class MonthlySchedulPresenter: ViewToPresenterMonthlySchedulProtocol {
 extension MonthlySchedulPresenter: InteractorToPresenterMonthlySchedulProtocol {
     func loadDatasucessfully(arrSchedule: [MedicineSchedul]) {
         view?.loadData(arrSchedule: arrSchedule)
+    }
+    
+    func setIndexSuccessfully(index: Int?) {
+        view?.setIndex(index: index)
     }
 }
