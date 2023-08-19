@@ -88,4 +88,14 @@ class AddMedicationInteractor: PresenterToInteractorAddMedicationProtocol {
             nextBtn.isHidden = false
         }
     }
+    
+    func getData(isUpdate: Bool, tittleLbl: UILabel, txtField: UITextField, nextBtn: UIButton, objMedicine: MedDetalis?) {
+        if isUpdate == true {
+            tittleLbl.text = objMedicine?.medName
+            txtField.text = objMedicine?.medName
+            nextBtn.isHidden = false
+        } else if isUpdate == true {
+            tittleLbl.text = "AddMedication"
+        }
+    }
 }

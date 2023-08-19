@@ -55,6 +55,10 @@ class AddMedicationPresenter: ViewToPresenterAddMedicationProtocol {
     func showDidSelect(tableView: UITableView, filterMed: [MedicineName], medArray: [MedicineName], indexPath: IndexPath, nextBtn: UIButton, txtFiledName: UITextField) {
         interactor?.didSelect(tableView: tableView, filterMed: filterMed, medArray: medArray, indexPath: indexPath, nextBtn: nextBtn, txtFiledName: txtFiledName)
     }
+    
+    func getData(isUpdate: Bool, tittleLbl: UILabel, txtField: UITextField, nextBtn: UIButton, objMedicine: MedDetalis?) {
+        interactor?.getData(isUpdate: isUpdate, tittleLbl: tittleLbl, txtField: txtField, nextBtn: nextBtn, objMedicine: objMedicine)
+    }
 }
 
 extension AddMedicationPresenter: InteractorToPresenterAddMedicationProtocol {

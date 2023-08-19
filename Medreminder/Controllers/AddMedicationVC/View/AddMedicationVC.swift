@@ -26,6 +26,7 @@ class AddMedicationVC: UIViewController {
     var presenter: ViewToPresenterAddMedicationProtocol?
     var medArray = [MedicineName]()
     var filterMed = [MedicineName]()
+    var objMedicine: MedDetalis?
     var filtered = false
     var isUpdate = false
     var index: Int?
@@ -34,10 +35,12 @@ class AddMedicationVC: UIViewController {
         super.viewDidLoad()
         AddMedicationRouter.createModule(vc: self)
         setUp()
+        titleLbl.text = "AddMedication"
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        getData()
         presenter?.showTittle(nextBtn: nextBtn, questionLbl: questionLbl, noteLbl: noteLbl)
     }
     //MARK: - Functions
@@ -46,6 +49,10 @@ class AddMedicationVC: UIViewController {
         presenter?.fetchRegisterNib(tableView: tableviewMedName, nibName: "MedicineNameTableViewCell", forCellReuseIdentifier: "MedicineNameTableViewCell")
         presenter?.loadData(tableView: tableviewMedName)
         txtFieldMedicineName.delegate = self
+    }
+    
+    func getData() {
+        presenter?.getData(isUpdate: isUpdate, tittleLbl: titleLbl, txtField: txtFieldMedicineName, nextBtn: nextBtn, objMedicine: objMedicine)
     }
     
     private func addMedicationSetUp() {
@@ -66,7 +73,7 @@ class AddMedicationVC: UIViewController {
     }
     
     @objc func tappedNextBtn() {
-        presenter?.nextBtnAction(txtFieldName: txtFieldMedicineName, medType: "", firstDose: "", hr: 0, min: 0, sec: 0, isUpdate: isUpdate, index: index ?? 0, navigationController: navigationController!)
+        presenter?.nextBtnAction(txtFieldName: txtFieldMedicineName, medType: objMedicine?.medType ?? "", firstDose: objMedicine?.firstDose ?? "", hr: objMedicine?.hr ?? 0, min: objMedicine?.min ?? 0, sec: objMedicine?.sec ?? 0, isUpdate: objMedicine?.isEdit ?? false, index: index ?? 0, navigationController: navigationController!)
     }
     
     @objc func tappedVolumeBtn() {

@@ -16,8 +16,8 @@ class TakeMedicinePresenter: ViewToPresenterTakeMedicineProtocol {
     var interactor: PresenterToInteractorTakeMedicineProtocol?
     var router: PresenterToRouterTakeMedicineProtocol?
     
-    func showToVC(index: Int?, navigationController: UINavigationController) {
-        router?.pushToVC(index: index, navigationController: navigationController)
+    func showToVC(medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isEdit: Bool, index: Int, navigationController: UINavigationController) {
+        router?.pushToVC(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isEdit, index: index, navigationController: navigationController)
     }
     
     func localNotification(med1: String, medName: String, medType: String, firstDose: String, medNameLbl: UILabel, medTypeLbl: UILabel, schedulLbl: UILabel, timeLbl: UILabel, hr: Int, min: Int) {

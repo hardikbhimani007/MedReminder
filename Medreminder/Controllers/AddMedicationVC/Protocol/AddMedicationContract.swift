@@ -32,6 +32,7 @@ protocol ViewToPresenterAddMedicationProtocol {
     func showFilteredData(filterMed: [MedicineName], medArray: [MedicineName], filtered: Bool) -> Int
     func showFilteredDataInTableView(tableView: UITableView, filterMed: [MedicineName], medArray: [MedicineName], indexPath: IndexPath) -> UITableViewCell
     func showDidSelect(tableView: UITableView, filterMed: [MedicineName], medArray: [MedicineName], indexPath: IndexPath, nextBtn: UIButton, txtFiledName: UITextField)
+    func getData(isUpdate: Bool, tittleLbl: UILabel, txtField: UITextField, nextBtn: UIButton, objMedicine: MedDetalis?)
 }
 
 
@@ -47,6 +48,7 @@ protocol PresenterToInteractorAddMedicationProtocol {
     func loadFilterData(filterMed: [MedicineName], medArray: [MedicineName], filtered: Bool) -> Int
     func showFilteredDataInTableView(tableView: UITableView, filterMed: [MedicineName], medArray: [MedicineName], indexPath: IndexPath) -> UITableViewCell
     func didSelect(tableView: UITableView, filterMed: [MedicineName], medArray: [MedicineName], indexPath: IndexPath, nextBtn: UIButton, txtFiledName: UITextField)
+    func getData(isUpdate: Bool, tittleLbl: UILabel, txtField: UITextField, nextBtn: UIButton, objMedicine: MedDetalis?)
 }
 
 

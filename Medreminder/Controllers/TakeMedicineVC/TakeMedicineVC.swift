@@ -24,7 +24,6 @@ class TakeMedicineVC: UIViewController {
     var presenter: ViewToPresenterTakeMedicineProtocol?
     var index: Int?
     var isUpdate: Bool?
-    let objMed: MedDetalis? = nil
     var medName = ""
     var medType = ""
     var med1 = ""
@@ -56,7 +55,7 @@ class TakeMedicineVC: UIViewController {
     }
     
     @objc func tappedEditBtn() {
-        presenter?.showToVC(index: index, navigationController: navigationController!)
+        presenter?.showToVC(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isUpdate ?? false, index: index ?? 0, navigationController: navigationController!)
     }
     
     @IBAction func tappedDeleteBtn(_ sender: UIButton) {

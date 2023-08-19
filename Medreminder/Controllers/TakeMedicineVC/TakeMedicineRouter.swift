@@ -24,10 +24,14 @@ class TakeMedicineRouter: PresenterToRouterTakeMedicineProtocol {
         vc.presenter?.interactor?.presenter = presenter
     }
     
-    func pushToVC(index: Int?, navigationController: UINavigationController) {
+    func pushToVC(medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isEdit: Bool, index: Int, navigationController: UINavigationController) {
         let vc = UIStoryboard(name: "AddMedication", bundle: nil).instantiateViewController(withIdentifier: "AddMedicationVC") as! AddMedicationVC
+        let data = MedDetalis(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isEdit, index: index)
+        vc.objMedicine = data
         vc.isUpdate = true
-        vc.index = index
+//        vc.objMedicine = updateData
+//        vc.isUpdate = true
+//        vc.index = index
         navigationController.pushViewController(vc, animated: true)
     }
     

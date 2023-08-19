@@ -22,7 +22,7 @@ protocol ViewToPresenterTakeMedicineProtocol {
     var view: PresenterToViewTakeMedicineProtocol? { get set }
     var interactor: PresenterToInteractorTakeMedicineProtocol? { get set }
     var router: PresenterToRouterTakeMedicineProtocol? { get set }
-    func showToVC(index: Int?, navigationController: UINavigationController)
+    func showToVC(medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isEdit: Bool, index: Int, navigationController: UINavigationController)
     func localNotification(med1: String, medName: String, medType: String, firstDose: String, medNameLbl: UILabel, medTypeLbl: UILabel, schedulLbl: UILabel, timeLbl: UILabel, hr: Int, min: Int)
     func deleteDataFromDatabase(index: Int?)
     func showRootView()
@@ -48,6 +48,6 @@ protocol InteractorToPresenterTakeMedicineProtocol {
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterTakeMedicineProtocol {
-    func pushToVC(index: Int?, navigationController: UINavigationController)
+    func pushToVC(medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isEdit: Bool, index: Int, navigationController: UINavigationController)
     func setRootView()
 }
