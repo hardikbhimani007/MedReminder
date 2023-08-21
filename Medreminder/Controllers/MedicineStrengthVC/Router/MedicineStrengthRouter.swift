@@ -24,10 +24,12 @@ class MedicineStrengthRouter: PresenterToRouterMedicineStrengthProtocol {
         vc.presenter?.interactor?.presenter = presenter
     }
     
-    func clickNextBtn(medicineName: UILabel, txtField: UITextField, getStrenth: String, navigationController: UINavigationController) {
+    func clickNextBtn(medicineName: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, txtField: UITextField, getStrenth: String, navigationController: UINavigationController) {
         let vc = UIStoryboard(name: "MedicinePurpose", bundle: nil).instantiateViewController(withIdentifier: "MedicinePurposeVC") as! MedicinePurposeVC
         let detalis = Medicine(medicineName: "\(medicineName.text ?? ""), \(txtField.text!) \(getStrenth)")
+        let objMedicine = MedDetalis(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isUpdate, index: index)
         vc.medicinePurpose = detalis
+        vc.objMedicne = objMedicine
         navigationController.pushViewController(vc, animated: true)
     }
     

@@ -23,10 +23,12 @@ class MonthlySchedulRouter: PresenterToRouterMonthlySchedulProtocol {
         vc.presenter?.interactor?.presenter = presenter
     }
     
-    func pushToVCWithData(index: Int, arrSchedule: [MedicineSchedul], medicineLabel: UILabel, navigationController: UINavigationController) {
+    func pushToVCWithData(index: Int, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, indxed: Int, arrSchedule: [MedicineSchedul], medicineLabel: UILabel, navigationController: UINavigationController) {
         let storyBoard = UIStoryboard(name: "MedicinePurpose", bundle: Bundle.main)
         let vc = storyBoard.instantiateViewController(withIdentifier: "WeeklyScheduleViewController") as! WeeklyScheduleViewController
         let detalis = Medicine(medicineName: medicineLabel.text!)
+        let objMedicine = MedDetalis(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isUpdate, index: indxed)
+        vc.objMedicine = objMedicine
         vc.index = index
         vc.arrSchedule = arrSchedule
         print(index)

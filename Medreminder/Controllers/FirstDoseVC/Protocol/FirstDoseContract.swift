@@ -26,7 +26,7 @@ protocol ViewToPresenterFirstDoseProtocol {
     func showRegisterNib(collectionView: UICollectionView, nibName: String, forCellWithReuseIdentifier: String)
     func loadedDataFetch()
     func showTittleAndLbl(questionLbl: UILabel, nextBtn: UIButton, collectionView: UICollectionView)
-    func showDataToVC(selectedIndex: String, medicinetittle: UILabel, navigationController: UINavigationController)
+    func showDataToVC(selectedIndex: String, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, medicinetittle: UILabel, navigationController: UINavigationController)
     func showToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
     func cellForRowAt(collectionView: UICollectionView, arrDaySchedule: [MedicineSchedul], selectedIndex: Int, nextBtn: UIButton, indexPath: IndexPath) -> UICollectionViewCell
 }
@@ -52,6 +52,6 @@ protocol InteractorToPresenterFirstDoseProtocol {
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterFirstDoseProtocol {
-    func pushToVCWithData(selectedIndex: String, medicinetittle: UILabel, navigationController: UINavigationController)
+    func pushToVCWithData(selectedIndex: String, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, medicinetittle: UILabel, navigationController: UINavigationController)
     func pushToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
 }

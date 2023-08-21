@@ -23,10 +23,12 @@ class WeeklyScheduleRouter: PresenterToRouterWeeklyScheduleProtocol {
         vc.presenter?.interactor?.presenter = presenter
     }
     
-    func pushToVCWithData(medicineTittle: UILabel, navigationController: UINavigationController) {
+    func pushToVCWithData(medicineTittle: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, navigationController: UINavigationController) {
         let storyBoard = UIStoryboard(name: "MedicinePurpose", bundle: Bundle.main)
         let vc = storyBoard.instantiateViewController(withIdentifier: "FirstDoseVC") as! FirstDoseVC
         let detalis = Medicine(medicineName: medicineTittle.text!)
+        let objMedicine = MedDetalis(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isUpdate, index: index)
+        vc.objMed = objMedicine
         vc.medicinePurpose = detalis
         navigationController.pushViewController(vc, animated: true)
     }

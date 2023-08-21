@@ -23,9 +23,11 @@ class MedicinePurposeRouter: PresenterToRouterMedicinePurposeProtocol {
         vc.presenter?.interactor?.presenter = presenter
     }
     
-    func pushToVCWithData(txtField: UILabel, navigationController: UINavigationController) {
+    func pushToVCWithData(txtField: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, navigationController: UINavigationController) {
         let vc = UIStoryboard(name: "MedicinePurpose", bundle: nil).instantiateViewController(withIdentifier: "MonthlySchedulVC") as! MonthlySchedulVC
         let detalis = Medicine(medicineName: txtField.text!)
+        let objMed = MedDetalis(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isUpdate, index: index)
+        vc.objMedicine = objMed
         vc.medicinePurpose = detalis
         navigationController.pushViewController(vc, animated: true)
     }

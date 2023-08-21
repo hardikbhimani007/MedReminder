@@ -29,9 +29,6 @@ class TakeMedicineRouter: PresenterToRouterTakeMedicineProtocol {
         let data = MedDetalis(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isEdit, index: index)
         vc.objMedicine = data
         vc.isUpdate = true
-//        vc.objMedicine = updateData
-//        vc.isUpdate = true
-//        vc.index = index
         navigationController.pushViewController(vc, animated: true)
     }
     

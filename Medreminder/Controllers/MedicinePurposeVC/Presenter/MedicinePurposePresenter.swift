@@ -36,8 +36,8 @@ class MedicinePurposePresenter: ViewToPresenterMedicinePurposeProtocol {
         interactor?.txtViewDidChange(nextBtn: nextBtn, tableView: tableView, txtField: txtField, noteLbl: noteLbl)
     }
     
-    func showToVCWithData(txtField: UILabel, navigationController: UINavigationController) {
-        router?.pushToVCWithData(txtField: txtField, navigationController: navigationController)
+    func showToVCWithData(txtField: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, navigationController: UINavigationController) {
+        router?.pushToVCWithData(txtField: txtField, medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isUpdate: isUpdate, index: index, navigationController: navigationController)
     }
     
     func showToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController) {

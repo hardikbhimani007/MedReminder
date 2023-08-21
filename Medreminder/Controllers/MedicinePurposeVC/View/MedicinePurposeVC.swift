@@ -27,6 +27,7 @@ class MedicinePurposeVC: UIViewController {
     var filterMed = [MedicineName]()
     var getStrength = ""
     var filtered = false
+    var objMedicne: MedDetalis?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,7 @@ class MedicinePurposeVC: UIViewController {
     }
     
     @objc func tappedNextBtn() {
-        presenter?.showToVCWithData(txtField: medicinePurposeTitle, navigationController: navigationController!)
+        presenter?.showToVCWithData(txtField: medicinePurposeTitle, medName: objMedicne?.medName ?? "", medType: objMedicne?.medType ?? "", firstDose: objMedicne?.firstDose ?? "", hr: objMedicne?.hr ?? 0, min: objMedicne?.min ?? 0, sec: objMedicne?.sec ?? 0, isUpdate: objMedicne?.isEdit ?? false, index: objMedicne?.index ?? 0, navigationController: navigationController!)
     }
     
     @objc func tappedVolumeBtn() {

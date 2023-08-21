@@ -25,7 +25,7 @@ protocol ViewToPresenterWeeklyScheduleProtocol {
     func showRegisterNib(tableView: UITableView, nibName: String, forCellReuseIdentifier: String)
     func showLoadedData()
     func lblAndBtn(questionLbl: UILabel, nextBtn: UIButton, tableview: UITableView)
-    func showToVCWithData(medicineTittle: UILabel, navigationController: UINavigationController)
+    func showToVCWithData(medicineTittle: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, navigationController: UINavigationController)
     func showToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
     func cellForRowAt(tableView: UITableView, arrDaySchedule: [MedicineSchedul], selectedIndex: [Int], nextBtn: UIButton, indexPath: IndexPath) -> UITableViewCell
 }
@@ -50,6 +50,6 @@ protocol InteractorToPresenterWeeklyScheduleProtocol {
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterWeeklyScheduleProtocol {
-    func pushToVCWithData(medicineTittle: UILabel, navigationController: UINavigationController)
+    func pushToVCWithData(medicineTittle: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, navigationController: UINavigationController)
     func pushToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
 }

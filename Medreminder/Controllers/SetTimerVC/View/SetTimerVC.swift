@@ -95,6 +95,7 @@ class SetTimerVC: UIViewController {
     }
     
     @objc func tappedUpdateBtn() {
+        presenter?.showLocalNotification(hour: hour, minute: minute, second: second, objMedicine: objMedicine)
         presenter?.updateData(objMedicine: objMedicine, hour: hour, minute: minute, second: second, navigationController: navigationController!)
      }
 }

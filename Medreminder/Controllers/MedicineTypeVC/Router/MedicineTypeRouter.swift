@@ -27,6 +27,7 @@ class MedicineTypeRouter: PresenterToRouterMedicineTypeProtocol {
         let vc = UIStoryboard(name: "AddMedication", bundle: nil).instantiateViewController(withIdentifier: "MedicineStrengthVC") as! MedicineStrengthVC
         let objMedicine = MedDetalis(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isUpdate, index: index)
         let detalis = Medicine(medicineName: medicineLbl.text!)
+        vc.objMedicine = objMedicine
         vc.medicine = detalis
         do {
             let data = try JSONEncoder().encode(objMedicine)

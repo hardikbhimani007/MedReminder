@@ -29,8 +29,8 @@ class WeeklySchedulePresenter: ViewToPresenterWeeklyScheduleProtocol {
         interactor?.setLblAndBtn(questionLbl: questionLbl, nextBtn: nextBtn, tableview: tableview)
     }
     
-    func showToVCWithData(medicineTittle: UILabel, navigationController: UINavigationController) {
-        router?.pushToVCWithData(medicineTittle: medicineTittle, navigationController: navigationController)
+    func showToVCWithData(medicineTittle: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, navigationController: UINavigationController) {
+        router?.pushToVCWithData(medicineTittle: medicineTittle, medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isUpdate: isUpdate, index: index, navigationController: navigationController)
     }
     
     func showToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController) {

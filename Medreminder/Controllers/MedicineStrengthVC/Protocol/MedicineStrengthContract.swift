@@ -28,7 +28,7 @@ protocol ViewToPresenterMedicineStrengthProtocol {
     func tittleLblAndBtn(noteLbl: UILabel, tittleLbl: UILabel, nextBtn: UIButton, tableView: UITableView)
     func loadedData()
     func setTxtViewDidChange(nextBtn: UIButton, txtField: UITextField, tittleLbl: UILabel)
-    func setNextBtn(medicineName: UILabel, txtField: UITextField, getStrenth: String, navigationController: UINavigationController)
+    func setNextBtn(medicineName: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, txtField: UITextField, getStrenth: String, navigationController: UINavigationController)
     func showToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
     func setcellForRow(tableView: UITableView, indexPath: IndexPath, arrStrength: [medicineType], selectedIndex: Int) -> UITableViewCell
 }
@@ -56,6 +56,6 @@ protocol InteractorToPresenterMedicineStrengthProtocol {
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterMedicineStrengthProtocol {
-    func clickNextBtn(medicineName: UILabel, txtField: UITextField, getStrenth: String, navigationController: UINavigationController)
+    func clickNextBtn(medicineName: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, txtField: UITextField, getStrenth: String, navigationController: UINavigationController)
     func pushToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
 }

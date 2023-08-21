@@ -49,7 +49,7 @@ class MedicineTypeVC: UIViewController {
 
     //MARK: - Button Actions
     @objc func tappedNextBtn() {
-        presenter?.storeValueWithPush(medName: objMedicine?.medName ?? "", medType: objMedicine?.medType ?? "", firstDose: objMedicine?.firstDose ?? "", hr: objMedicine?.hr ?? 0, min: objMedicine?.min ?? 0, sec: objMedicine?.sec ?? 0, isUpdate: objMedicine?.isEdit ?? false, index: objMedicine?.index ?? 0, medicineLbl: medicineNameLbl, navigationController: navigationController!)
+        presenter?.storeValueWithPush(medName: objMedicine?.medName ?? "", medType: selectedIndexType, firstDose: objMedicine?.firstDose ?? "", hr: objMedicine?.hr ?? 0, min: objMedicine?.min ?? 0, sec: objMedicine?.sec ?? 0, isUpdate: objMedicine?.isEdit ?? false, index: objMedicine?.index ?? 0, medicineLbl: medicineNameLbl, navigationController: navigationController!)
     }
     
     @objc func tappedBackBtn() {
@@ -81,11 +81,7 @@ extension MedicineTypeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let index = arrMedicine.firstIndex(where: { $0.nameAndStrength == (objMedicine?.medType ?? "") }) {
-            return presenter?.showCellForRow(tableView: tableView, arrMedicine: arrMedicine, selectedIndex: index, indexPath: indexPath, nextBtn: nextBtn) ?? UITableViewCell()
-        } else {
-            return presenter?.showCellForRow(tableView: tableView, arrMedicine: arrMedicine, selectedIndex: selectedIndex, indexPath: indexPath, nextBtn: nextBtn) ?? UITableViewCell()
-        }
+        return presenter?.showCellForRow(tableView: tableView, arrMedicine: arrMedicine, selectedIndex: selectedIndex, indexPath: indexPath, nextBtn: nextBtn) ?? UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -102,6 +98,9 @@ extension MedicineTypeVC: PresenterToViewMedicineTypeProtocol{
     // TODO: Implement View Output Methods
     func showData(arrMedicineType: [medicineType]) {
         self.arrMedicine = arrMedicineType
+        if let index = arrMedicine.firstIndex(where: { $0.nameAndStrength == (objMedicine?.medType ?? "") }) {
+            self.selectedIndex = index
+        }
         self.tableViewMedicineType.reloadData()
     }
     

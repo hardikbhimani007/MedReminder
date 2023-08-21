@@ -36,8 +36,8 @@ class MedicineStrengthPresenter: ViewToPresenterMedicineStrengthProtocol {
         interactor?.txtViewDidChange(nextBtn: nextBtn, txtField: txtField, tittleLbl: tittleLbl)
     }
     
-    func setNextBtn(medicineName: UILabel, txtField: UITextField, getStrenth: String, navigationController: UINavigationController) {
-        router?.clickNextBtn(medicineName: medicineName, txtField: txtField, getStrenth: getStrenth, navigationController: navigationController)
+    func setNextBtn(medicineName: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, txtField: UITextField, getStrenth: String, navigationController: UINavigationController) {
+        router?.clickNextBtn(medicineName: medicineName, medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isUpdate: isUpdate, index: index, txtField: txtField, getStrenth: getStrenth, navigationController: navigationController)
     }
     
     func showToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController) {

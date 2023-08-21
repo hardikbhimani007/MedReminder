@@ -28,8 +28,8 @@ class FirstDosePresenter: ViewToPresenterFirstDoseProtocol {
         interactor?.setTittleAndBtn(questionLbl: questionLbl, nextBtn: nextBtn, collectionView: collectionView)
     }
     
-    func showDataToVC(selectedIndex: String, medicinetittle: UILabel, navigationController: UINavigationController) {
-        router?.pushToVCWithData(selectedIndex: selectedIndex, medicinetittle: medicinetittle, navigationController: navigationController)
+    func showDataToVC(selectedIndex: String, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, medicinetittle: UILabel, navigationController: UINavigationController) {
+        router?.pushToVCWithData(selectedIndex: selectedIndex, medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isUpdate: isUpdate, index: index, medicinetittle: medicinetittle, navigationController: navigationController)
     }
     
     func showToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController) {

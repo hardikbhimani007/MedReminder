@@ -49,7 +49,7 @@ class FirstDoseVC: UIViewController {
     
     //MARK: - Button Actions
     @objc func tappedNextBtn() {
-        presenter?.showDataToVC(selectedIndex: selectedIndexType, medicinetittle: medicineTitleLbl, navigationController: navigationController!)
+        presenter?.showDataToVC(selectedIndex: selectedIndexType, medName: objMed?.medName ?? "", medType: objMed?.medType ?? "", firstDose: selectedIndexType, hr: objMed?.hr ?? 0, min: objMed?.min ?? 0, sec: objMed?.sec ?? 0, isUpdate: objMed?.isEdit ?? false, index: objMed?.index ?? 0, medicinetittle: medicineTitleLbl, navigationController: navigationController!)
     }
     
     @objc func tappedBackBtn() {
@@ -77,7 +77,7 @@ extension FirstDoseVC: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        presenter?.cellForRowAt(collectionView: collectionView, arrDaySchedule: arrDaySchedule, selectedIndex: selectedIndex, nextBtn: nextBtn, indexPath: indexPath) ?? UICollectionViewCell()
+           return presenter?.cellForRowAt(collectionView: collectionView, arrDaySchedule: arrDaySchedule, selectedIndex: selectedIndex, nextBtn: nextBtn, indexPath: indexPath) ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -108,6 +108,9 @@ extension FirstDoseVC: PresenterToViewFirstDoseProtocol{
     // TODO: Implement View Output Methods
     func showData(arrDaySchedule: [MedicineSchedul]) {
         self.arrDaySchedule = arrDaySchedule
+        if let index = arrDaySchedule.firstIndex(where: { $0.time == (objMed?.firstDose ?? "") }) {
+            self.selectedIndex = index
+        }
         self.collectionviewDose.reloadData()
     }
     

@@ -21,6 +21,7 @@ class WeeklyScheduleViewController: UIViewController {
     var medicinePurpose = Medicine()
     var arrDaySchedule = [MedicineSchedul]()
     var arrSchedule = [MedicineSchedul]()
+    var objMedicine: MedDetalis?
     var selectedIndex: [Int] = []
     var index: Int = 0
     
@@ -48,7 +49,7 @@ class WeeklyScheduleViewController: UIViewController {
     
     //MARK: - Button Actions
     @objc func tappedNextBtn() {
-        presenter?.showToVCWithData(medicineTittle: medicineTitleLbl, navigationController: navigationController!)
+        presenter?.showToVCWithData(medicineTittle: medicineTitleLbl, medName: objMedicine?.medName ?? "", medType: objMedicine?.medType ?? "", firstDose: objMedicine?.firstDose ?? "", hr: objMedicine?.hr ?? 0, min: objMedicine?.min ?? 0, sec: objMedicine?.sec ?? 0, isUpdate: objMedicine?.isEdit ?? false, index: objMedicine?.index ?? 0, navigationController: navigationController!)
     }
     
     @objc func tappedBackBtn() {

@@ -24,6 +24,7 @@ class MedicineStrengthVC: UIViewController {
     var medicine = Medicine()
     var getStrength = ""
     var selectedIndex = 0
+    var objMedicine: MedDetalis?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +66,7 @@ class MedicineStrengthVC: UIViewController {
     }
     
     @objc func tappedNextBtn() {
-        presenter?.setNextBtn(medicineName: medicineNameLbl, txtField: txtFieldStrngth, getStrenth: getStrength, navigationController: navigationController!)
+        presenter?.setNextBtn(medicineName: medicineNameLbl, medName: objMedicine?.medName ?? "", medType: objMedicine?.medType ?? "", firstDose: objMedicine?.firstDose ?? "", hr: objMedicine?.hr ?? 0, min: objMedicine?.min ?? 0, sec: objMedicine?.sec ?? 0, isUpdate: objMedicine?.isEdit ?? false, index: objMedicine?.index ?? 0, txtField: txtFieldStrngth, getStrenth: getStrength, navigationController: navigationController!)
     }
     
     @objc func tappedBackBtn() {

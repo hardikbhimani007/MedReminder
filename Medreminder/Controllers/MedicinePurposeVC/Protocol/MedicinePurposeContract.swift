@@ -27,7 +27,7 @@ protocol ViewToPresenterMedicinePurposeProtocol {
     func showRegisterNib(nibName: String, forCellReuseIdentifier: String, tableView: UITableView)
     func btnAndLabel(questionLbl: UILabel, noteLbl: UILabel, nextBtn: UIButton)
     func showTxtViewDidChange(nextBtn: UIButton, tableView: UITableView, txtField: UITextField, noteLbl: UILabel)
-    func showToVCWithData(txtField: UILabel, navigationController: UINavigationController)
+    func showToVCWithData(txtField: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, navigationController: UINavigationController)
     func showToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
     func setNumberOfRowSection(filterMed: [MedicineName], arrMedPupose: [MedicineName], filtered: Bool) -> Int
     func setCellForRow(tableView: UITableView, filterMed: [MedicineName], arrMedPupose: [MedicineName], indexPath: IndexPath) -> UITableViewCell
@@ -58,6 +58,6 @@ protocol InteractorToPresenterMedicinePurposeProtocol {
 
 // MARK: Router Input (Presenter -> Router)
 protocol PresenterToRouterMedicinePurposeProtocol {
-    func pushToVCWithData(txtField: UILabel, navigationController: UINavigationController)
+    func pushToVCWithData(txtField: UILabel, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, navigationController: UINavigationController)
     func pushToVC(storyBoardName: String, withIdentifier: String, navigationController: UINavigationController)
 }

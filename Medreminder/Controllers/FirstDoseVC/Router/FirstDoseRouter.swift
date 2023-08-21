@@ -23,16 +23,18 @@ class FirstDoseRouter: PresenterToRouterFirstDoseProtocol {
         vc.presenter?.interactor?.presenter = presenter
     }
     
-    func pushToVCWithData(selectedIndex: String, medicinetittle: UILabel, navigationController: UINavigationController) {
+    func pushToVCWithData(selectedIndex: String, medName: String, medType: String, firstDose: String, hr: Int, min: Int, sec: Int, isUpdate: Bool, index: Int, medicinetittle: UILabel, navigationController: UINavigationController) {
         let vc = UIStoryboard(name: "MedicinePurpose", bundle: nil).instantiateViewController(withIdentifier: "SetTimerVC") as! SetTimerVC
         let detalis = Medicine(medicineName: medicinetittle.text!)
+//        let objMedicine = MedDetalis(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isUpdate, index: index)
+//        vc.objMedicine = objMedicine
+        vc.medicinePurpose = detalis
         do {
             if let data = UserDefaults.standard.data(forKey: "ObjMedicine") {
                 var objMed = try JSONDecoder().decode(MedDetalis.self, from: data)
-                objMed = MedDetalis(medName: objMed.medName, medType: objMed.medType, firstDose: selectedIndex, hr: 0, min: 0, sec: 0, isEdit: objMed.isEdit, index: objMed.index)
+                objMed = MedDetalis(medName: medName, medType: medType, firstDose: firstDose, hr: hr, min: min, sec: sec, isEdit: isUpdate, index: index)
                 print(">>>>>>>>",objMed)
                 vc.objMedicine = objMed
-                vc.medicinePurpose = detalis
             }
         } catch let error {
             print("Error decoding: \(error)")
