@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             Bundle.setLanguage("en")
         }
         setUpAppNavigation()
-      getPermission(application: application)
+        getPermission(application: application)
         return true
     }
     

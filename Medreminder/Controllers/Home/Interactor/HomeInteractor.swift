@@ -70,7 +70,7 @@ class HomeInteractor: PresenterToInteractorHomeProtocol {
     func loadDataForCell(tableView: UITableView, arrMedDtalis: [MedicineDetalis], indexPath: IndexPath) -> UITableViewCell {
         let cell: MedicineDetalisTableViewCell = tableView.dequeueReusableCell(withIdentifier: "MedicineDetalisTableViewCell") as! MedicineDetalisTableViewCell
         cell.MedicineNameLbl.text = arrMedDtalis[indexPath.row].medicineName
-        cell.MedTypeLbl.text = arrMedDtalis[indexPath.row].medicineType
+        cell.MedTypeLbl.text = "1 \(arrMedDtalis[indexPath.row].medicineType ?? "")"
         cell.takingLbl.text = arrMedDtalis[indexPath.row].firstDose
         let ampm = arrMedDtalis[indexPath.row].hr ?? 0 >= 12 ? "PM" : "AM"
         let formatedTime = String(format: "%02d:%02d %@", arrMedDtalis[indexPath.row].hr!, arrMedDtalis[indexPath.row].min!, ampm)

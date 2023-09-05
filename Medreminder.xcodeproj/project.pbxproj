@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BDF3E9A38C5C658142FE753E /* Pods_Medreminder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82F1DB18649B12819194D19B /* Pods_Medreminder.framework */; };
+		E0106D882A94979D00DA2582 /* SetTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0651DAD2A77BA5800BD7149 /* SetTimerVC.swift */; };
 		E03E258D2A73DEBF00A628D9 /* MedicineStrengthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E03E258C2A73DEBF00A628D9 /* MedicineStrengthVC.swift */; };
 		E04FE7BA2A7E30FE00C85CF1 /* AddMedication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04FE7B92A7E30FE00C85CF1 /* AddMedication.storyboard */; };
 		E04FE7BC2A7E325000C85CF1 /* MedicinePurpose.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E04FE7BB2A7E325000C85CF1 /* MedicinePurpose.storyboard */; };
@@ -17,7 +18,6 @@
 		E058EDEF2A73C1F700CAFF58 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058EDEE2A73C1F700CAFF58 /* Model.swift */; };
 		E058EDF22A73C58400CAFF58 /* MedicineTypeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E058EDF02A73C58400CAFF58 /* MedicineTypeTableViewCell.swift */; };
 		E058EDF32A73C58400CAFF58 /* MedicineTypeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E058EDF12A73C58400CAFF58 /* MedicineTypeTableViewCell.xib */; };
-		E0651DAE2A77BA5800BD7149 /* SetTimerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0651DAD2A77BA5800BD7149 /* SetTimerVC.swift */; };
 		E0651DB12A77D1BA00BD7149 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E0651DB02A77D1BA00BD7149 /* Realm */; };
 		E0651DB32A77D1BA00BD7149 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E0651DB22A77D1BA00BD7149 /* RealmSwift */; };
 		E0651DB52A77D2CB00BD7149 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0651DB42A77D2CB00BD7149 /* Database.swift */; };
@@ -1429,7 +1429,6 @@
 				E078D58C2A8B793600904D42 /* MedicationInteractor.swift in Sources */,
 				E058EDED2A73BA3300CAFF58 /* MedicineTypeVC.swift in Sources */,
 				E09EF91E2A8CE8880089ED95 /* TakeMedicineInteractor.swift in Sources */,
-				E0651DAE2A77BA5800BD7149 /* SetTimerVC.swift in Sources */,
 				E0FA77C82A7252FA004EADEC /* HomeVC.swift in Sources */,
 				E0842E382A7766AC002961B0 /* MedicinePurposeVC.swift in Sources */,
 				E09EF8FC2A8CD1B40089ED95 /* SetTimerPresenter.swift in Sources */,
@@ -1460,6 +1459,7 @@
 				E095BF022A7A5B6200702CDE /* SideMenuTableViewCell.swift in Sources */,
 				E0B7BAF72A77B4CF0051C398 /* FirstDoseCollectionViewCell.swift in Sources */,
 				E078D5A92A8B8AE600904D42 /* AddMedicationRouter.swift in Sources */,
+				E0106D882A94979D00DA2582 /* SetTimerVC.swift in Sources */,
 				E0842E432A77B1A8002961B0 /* FirstDoseVC.swift in Sources */,
 				E078D5992A8B7E9400904D42 /* GuidePresenter.swift in Sources */,
 				E095BEFD2A7A11F800702CDE /* GuideModel.swift in Sources */,
